@@ -139,3 +139,11 @@ article{
          border-radius: 2vh;
          margin: 1vh;
 }
+footer{
+         background-color: #6d9757;
+         text-align: center;
+}
+h2{
+         margin: 0;
+         padding: 1vh;
+}
