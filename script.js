@@ -9,6 +9,8 @@ setInterval(() => {
     
     kepkeres.innerHTML = `<img src="img/${kepek[i]}" alt="${mottok[i]}" class="mozgokepek">`
     mottokeres.innerHTML = mottok[i]
+    
+    i++
 
     if (i == kepek.length)
     {
