@@ -116,11 +116,26 @@ hr {
          box-shadow: 0 0.5vh 0.1vh rgba(0, 0, 0, 0.463);
 }
 main{
+         display: flex;
          margin: 7vh;
          padding: 4vh;
          background-color: #A7C1A8;
          border-radius: 2vh;
 }
+main > *{
+         padding: 2vh;
+}
 #quizmain, #tananyagokmain, #ertekcsokkenesmain{
          display: none;
+}
+img{
+         height: 35vh;
+         width: 60vh;
+         border-radius: 1vh;
+}
+article{
+         background-color: #6d9757;
+         padding: 2vh;
+         border-radius: 2vh;
+         margin: 1vh;
 }
