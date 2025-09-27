@@ -2,12 +2,29 @@ body{
          background-color: #D9E9CF;
          margin: 0;
          font-family: Verdana, Geneva, Tahoma, sans-serif;
+         padding: 0 7vh;
 
 }
-nav{
-         background-image: url(img/education-3670453.jpg);
+header{
+         background-image: url(img/clock-2696234_1920.jpg);
          background-size: cover;
-         padding: 50px;
+         background-repeat: no-repeat;
+         background-position:bottom;
+         border-radius: 3vh;
+         border: 0.2vh solid #96A78D;
+         padding: 100px 50px;
+         box-shadow: 0 1vh 0.4vh rgba(50, 50, 50, 0.293);
+}
+h1{
+         background-color: rgba(117, 117, 117, 0.5);
+         text-align: center;
+         border-radius: 2vh;
+}
+nav{
+         background-image: url(img/clock-2696234_1920.jpg);
+         background-size:contain;
+         background-repeat: no-repeat;
+         margin: 2vh 0;
 }
 table, tr, td{
          border-collapse: collapse;
@@ -32,4 +49,9 @@ a:hover{
 td:hover > a{
          color: 0.2vh solid #96A78D;
          transition: color 0.3 ease;
+}
+hr{
+         color: #00000000;
+         border: 0.1vh solid rgba(0, 0, 0, 0);
+         box-shadow: 0 0.5vh 0.1vh rgba(0, 0, 0, 0.463);
 }
