@@ -1,5 +1,5 @@
 body{
-         background-color: #D9E9CF;
+         background-color: #F0F0F0;
          margin: 0;
          font-family: Verdana, Geneva, Tahoma, sans-serif;
 
@@ -40,12 +40,15 @@ tr{
          display: flex;
          justify-content: space-between;
          width: 100%;
+         background-color: #D9E9CF;
+         border-radius: 5vh;
 }
 table{
          width: 100%;
          border: 0.2vh solid #91c88d;
          border-radius: 0.8vh;
          height: 10vh;
+         background-color: #F0F0F0;
 }
 td{
          display: flex;
@@ -63,6 +66,7 @@ td{
          transition: margin 0.3s ease;
          transition: padding 0.3s ease;
          height: 8vh;
+         cursor:pointer;
 }
 td:hover{
          border-collapse: collapse;
@@ -82,7 +86,6 @@ a{
          color:rgb(27, 27, 27);
          font-size: 3vh;
          text-align: center;
-         cursor: pointer;
          user-select: none;
 }
 a:hover{
