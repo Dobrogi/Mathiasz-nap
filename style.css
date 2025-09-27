@@ -1,43 +1,50 @@
-body{
-         background-color: #F0F0F0;
+body {
+         background-color: #E3EEB2;
          margin: 0;
          font-family: Verdana, Geneva, Tahoma, sans-serif;
 
 
 }
-header{
+
+header {
          background-image: url(img/clock-2696234_1920.jpg);
          background-size: cover;
          background-repeat: no-repeat;
-         background-position:bottom;
+         background-position: bottom;
          border-radius: 3vh;
          border: 0.2vh solid #96A78D;
          padding: 20vh 10vh;
          box-shadow: 0 1vh 0.4vh rgba(50, 50, 50, 0.293);
          margin: 0 7vh;
 }
-h1{
-         background-color: #ff9898b2;
+
+h1 {
+         background-color: #749BC2b2;
          text-align: center;
          border-radius: 2vh;
          word-wrap: break-word;
          font-size: 6vh;
 
 }
-nav{
+
+nav {
          background-image: url(img/clock-2696234_1920.jpg);
-         background-size:contain;
+         background-size: contain;
          background-repeat: no-repeat;
          margin: 2vh 7vh;
 }
-table, tr, td{
+
+table,
+tr,
+td {
          border-collapse: collapse;
          background-color: #7f9c70;
          transition: background-color 0.15s ease;
          text-align: center;
          border-radius: 1vh;
 }
-tr{
+
+tr {
          display: flex;
          justify-content: space-between;
          width: 100%;
@@ -45,13 +52,15 @@ tr{
          padding: 0.4vh;
 
 }
-table{
+
+table {
          width: 100%;
          border-radius: 1vh;
          height: 10vh;
          background-color: #F0F0F0;
 }
-td{
+
+td {
          display: flex;
          justify-content: center;
          align-items: center;
@@ -59,16 +68,17 @@ td{
          border: 0.2vh solid #b4d8b1;
          margin: 0.3vh;
          border-radius: 1vh;
-         background-color:#6d9757;
+         background-color: #6d9757;
          margin-bottom: 1vh;
          box-shadow: 0 0.1vh 0.1vh rgba(0, 0, 0, 0.5);
          transition: box-shadow 0.3s ease;
          transition: margin 0.3s ease;
          transition: padding 0.3s ease;
          height: 8vh;
-         cursor:pointer;
+         cursor: pointer;
 }
-td:hover{
+
+td:hover {
          border-collapse: collapse;
          color: 0.2vh solid #96A78D;
          background-color: #8fb18c;
@@ -81,23 +91,36 @@ td:hover{
 
 
 }
-a{
+
+a {
          text-decoration: none;
-         color:rgb(27, 27, 27);
+         color: rgb(27, 27, 27);
          font-size: 3vh;
          text-align: center;
          user-select: none;
 }
-a:hover{
+
+a:hover {
          background-color: 0.2vh solid #B6CEB4;
          transition: background-color 0.3 ease;
 }
-td:hover > a{
+
+td:hover>a {
          color: 0.2vh solid #96A78D;
          transition: color 0.3 ease;
 }
-hr{
+
+hr {
          color: #00000000;
          border: 0.1vh solid rgba(0, 0, 0, 0);
          box-shadow: 0 0.5vh 0.1vh rgba(0, 0, 0, 0.463);
+}
+main{
+         margin: 7vh;
+         padding: 4vh;
+         background-color: #A7C1A8;
+         border-radius: 2vh;
+}
+#quizmain, #tananyagokmain, #ertekcsokkenesmain{
+         display: none;
 }
