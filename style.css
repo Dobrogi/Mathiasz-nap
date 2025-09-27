@@ -1,5 +1,5 @@
 body{
-         background-color: #D9E9CF;
+         background-color: #F0F0F0;
          margin: 0;
          font-family: Verdana, Geneva, Tahoma, sans-serif;
 
@@ -17,7 +17,7 @@ header{
          margin: 0 7vh;
 }
 h1{
-         background-color: rgba(117, 117, 117, 0.7);
+         background-color: #ff9898b2;
          text-align: center;
          border-radius: 2vh;
          word-wrap: break-word;
@@ -35,27 +35,30 @@ table, tr, td{
          background-color: #7f9c70;
          transition: background-color 0.15s ease;
          text-align: center;
+         border-radius: 1vh;
 }
 tr{
          display: flex;
          justify-content: space-between;
          width: 100%;
+         background-color: #84AE92;
+         padding: 0.4vh;
+
 }
 table{
          width: 100%;
-         border: 0.2vh solid #91c88d;
-         border-radius: 0.8vh;
+         border-radius: 1vh;
          height: 10vh;
+         background-color: #F0F0F0;
 }
 td{
          display: flex;
          justify-content: center;
          align-items: center;
-         border-radius: 0.2vh;
          width: 22%;
          border: 0.2vh solid #b4d8b1;
          margin: 0.3vh;
-         border-radius: 0.5vh;
+         border-radius: 1vh;
          background-color:#6d9757;
          margin-bottom: 1vh;
          box-shadow: 0 0.1vh 0.1vh rgba(0, 0, 0, 0.5);
@@ -63,6 +66,7 @@ td{
          transition: margin 0.3s ease;
          transition: padding 0.3s ease;
          height: 8vh;
+         cursor:pointer;
 }
 td:hover{
          border-collapse: collapse;
@@ -82,7 +86,6 @@ a{
          color:rgb(27, 27, 27);
          font-size: 3vh;
          text-align: center;
-         cursor: pointer;
          user-select: none;
 }
 a:hover{
