@@ -1,0 +1,16 @@
+body{
+         background-color: #D9E9CF;
+         margin: 0;
+}
+header{
+         background-image: url(education-3670453.jpg);
+}
+table, tr, td{
+         border-collapse: collapse;
+         border: 0.2vh solid #B6CEB4;
+         background-color: #96A78D;
+}
+table
+a{
+         text-decoration: none;
+}
