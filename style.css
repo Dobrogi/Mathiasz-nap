@@ -18,6 +18,7 @@ header {
          padding: 20vh 10vh;
          box-shadow: 0 1vh 0.4vh rgba(50, 50, 50, 0.293);
          margin: 0 7vh;
+         backdrop-filter: blur(2px);
 }
 
 h1 {
@@ -122,6 +123,7 @@ main{
          padding: 4vh;
          background: linear-gradient(to right, rgba(30, 167, 99, 0.5), rgba(169, 231, 81, 0.5));
          border-radius: 2vh;
+         backdrop-filter: blur(2px);
 }
 main > *{
          padding: 2vh;
@@ -174,4 +176,7 @@ p{
 #kepvetites {
   position: relative;
   overflow: hidden;
+}
+table{
+         border-radius: 1vh;
 }
