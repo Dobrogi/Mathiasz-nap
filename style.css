@@ -1,5 +1,5 @@
 body {
-         background-image: url(img/retro-8581825_1280.jpg);
+         background-image: url(img/retro-8581825.jpg);
          background-attachment: fixed;
          background-repeat: no-repeat;
          background-position: center;
@@ -66,7 +66,7 @@ td {
          justify-content: center;
          align-items: center;
          width: 22%;
-         border: 0.2vh solid #b4d8b1;
+         border: 0.1vh solid #b4d8b1;
          margin: 0.3vh;
          border-radius: 1vh;
          background-color: #6d9757;
