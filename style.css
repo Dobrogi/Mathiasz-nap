@@ -160,6 +160,8 @@ p{
   height: 40vh;
   width: 60vh ; 
   overflow:hidden;
+}#motto{
+  height: 3vh;
 }
 #kepvetites img, #motto p{
   position: absolute;
