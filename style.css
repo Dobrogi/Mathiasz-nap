@@ -31,9 +31,6 @@ h1 {
 }
 
 nav {
-         background-image: url(img/clock-2696234_1920.jpg);
-         background-size: contain;
-         background-repeat: no-repeat;
          margin: 2vh 7vh;
 }
 
@@ -153,10 +150,39 @@ h2{
 }
 p{
          font-size: 1.3vh;
+         text-align: center;
+}
+#kepvetites, #motto{
+  position: relative;
+  height: 40vh;
+  width: 60vh ; 
+  overflow:hidden;
+}
+#kepvetites img, #motto p{
+  position: absolute;
+  opacity: 0;
+  height: 91%;
+  width: 94%;
+  transform: translateX(100%);
+  transition: 1s;
+}#motto p{
+  transform: translateX(50%);
+}
+#kepvetites img.aktiv, #motto p.aktiv{
+  opacity: 1;
+  transform: translateX(0);
 }
 
+#kepvetites img.after, #motto p.after{
+  opacity: 0;
+  transform: translateX(-100%);
+}
+#motto p.after{
+  opacity: 0;
+  transform: translateX(-50%);
+}
 
-.mozgokepek {
+/*.mozgokepek {
   opacity: 0;
   transition: opacity 1s ease-in-out;
   width: 100%;
@@ -176,7 +202,8 @@ p{
 #kepvetites {
   position: relative;
   overflow: hidden;
-}
+}*/
+
 table{
          border-radius: 1vh;
 }
