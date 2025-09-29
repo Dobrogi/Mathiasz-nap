@@ -20,16 +20,16 @@
     <nav class="nav">
         <table>
             <tr>
-                <td><a>Kezdőlap</a></td>
-                <td><a>Quiz</a></td>
-                <td><a>Tananyagok</a></td>
-                <td><a>Értékcsökkenés számítás</a></td>
+                <td onclick="navMenu(0)"><a>Kezdőlap</a></td>
+                <td onclick="navMenu(1)"><a>Quiz</a></td>
+                <td onclick="navMenu(2)"><a>Tananyagok</a></td>
+                <td onclick="navMenu(3)"><a>Értékcsökkenés számítás</a></td>
             </tr>
         </table>
     </nav>
 
 
-    <main id="kezdolapmain">
+    <main id="kezdolapmain" class="aktiv">
         <section>
             <article>
                 <h2>Pénzügyi Tudatosság</h2>
@@ -55,9 +55,29 @@
         </section>
     </main>
 
-    <main id="quizmain"></main>
-    <main id="tananyagokmain"></main>
-    <main id="ertekcsokkenesmain"></main>
+    <main id="quizmain">
+        <section id="kartyaSzulo">
+            <article class="kartya">
+                <a href="html/linearisQuiz.html">
+                <div class="kartyaCim"><p>Lineáris</p><p>→</p></div>
+                <div class="kartyaContent"><p>plészholder</p></div></a>
+            </article>
+            <article class="kartya">
+                <div class="kartyaCim"><p>Évszámok összege</p> <p>→</p></div>
+                <div class="kartyaContent"><p>szöveg</p></div>
+            </article>
+            <article class="kartya">
+                <div class="kartyaCim"><p>Szorzószámos</p> <p>→</p></div>
+                <div class="kartyaContent"><p>a</p></div>
+            </article>
+            <article class="kartya">
+                <div class="kartyaCim"><p>Teljesítményarányos</p> <p>→</p></div>
+                <div class="kartyaContent"><p>kártyákban</p></div>
+            </article>
+        </section>
+    </main>
+    <main id="tananyagokmain">3</main>
+    <main id="ertekcsokkenesmain">4</main>
 
 
     <footer>

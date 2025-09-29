@@ -4,10 +4,11 @@ body {
          background-repeat: no-repeat;
          background-position: center;
          background-size: cover;
-         margin: 0.4;
-         font-family: Verdana, Geneva, Tahoma, sans-serif;
+         margin: 0;
 }
-
+body *{
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
 header {
          background: linear-gradient(to right, rgba(141, 185, 198, 0.8), rgba(227, 215, 115, 0.5));
          background-size: cover;
@@ -120,12 +121,15 @@ main{
          background: linear-gradient(to right, rgba(30, 167, 99, 0.5), rgba(169, 231, 81, 0.5));
          border-radius: 2vh;
          backdrop-filter: blur(2px);
+         display: none;
+         padding-bottom: 30vh;
+         overflow: hidden;
+}
+.aktiv{
+  display: flex;
 }
 main > *{
          padding: 2vh;
-}
-#quizmain, #tananyagokmain, #ertekcsokkenesmain{
-         display: none;
 }
 img{
          height: 35vh;
@@ -155,6 +159,8 @@ p{
          font-size: 1.3vh;
          text-align: center;
 }
+
+/*Imidzs karuzel*/
 #kepvetites, #motto{
   position: relative;
   height: 40vh;
@@ -177,16 +183,64 @@ p{
   opacity: 1;
   transform: translateX(0);
 }
-
-#kepvetites img.after, #motto p.after{
+#kepvetites img.after{
   opacity: 0;
   transform: translateX(-100%);
 }
 #motto p.after{
   opacity: 0;
   transform: translateX(-50%);
+  text-align: left;
 }
 
+/*Kartyaformazas*/
+#quizmain{
+    padding: 7vh 2vh unset;
+}
+#kartyaSzulo{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+
+}
+.kartya{
+  border:0.2vh dashed #385728;
+  overflow: hidden;
+  padding: 0;
+  width: 80%;
+  margin-top:1.5vh;
+  transition:box-shadow 0.3s, transform 0.3s;
+}
+.kartya:hover{
+  box-shadow:0 0.3vh 1vh rgba(0, 0, 0, 0.5);
+  transform: translateY(-1.5vh);
+  cursor: pointer;
+  transition:transform 0.3s;
+}
+.kartyaCim{
+  background-color: rgb(43, 226, 125);
+  padding: 1vh 2vh;
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+  overflow: hidden;
+}
+.kartyaCim > a{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+.kartyaContent{
+  background-color: white;
+  height: 10vh;
+  overflow: hidden;
+}
+.kartyaContent p{
+  text-align: left;
+  margin: 0.8vh;
+
+}
 /*.mozgokepek {
   opacity: 0;
   transition: opacity 1s ease-in-out;

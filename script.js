@@ -9,6 +9,7 @@ let i = 0
 
 const carouselKepek = document.querySelectorAll("#kepvetites img")
 const carouselMotto = document.querySelectorAll("#motto p")
+
 setInterval(() => {
     const elozo = i
     i = (i+1) % carouselKepek.length
@@ -25,6 +26,12 @@ setInterval(() => {
         carouselMotto[elozo].classList.remove("after")
     }, 1000);
 }, 3000);
+
+const osszesMain = document.querySelectorAll("body main")
+function navMenu(indeksz){
+    osszesMain.forEach(elem => elem.classList.remove("aktiv"))
+    osszesMain[indeksz].classList.add("aktiv")
+}
 
 
 /*
