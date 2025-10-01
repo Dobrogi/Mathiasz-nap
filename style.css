@@ -6,6 +6,9 @@ body {
          background-size: cover;
          margin: 0;
 }
+hr{
+  font-size: 3vh;
+}
 body *{
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
@@ -263,8 +266,12 @@ table{
 }
 
 .mathiaszlogo{
-  width: 60%;
+  width: 100%;
+  height: auto;
   border-radius: 20vh;
+}
+.footerKep{
+    width: 20vh;
 }
 
 
@@ -272,9 +279,13 @@ footer{
         display: flex;
          background-color: rgba(109, 151, 87, 0.8);
          text-align: center;
-         border-radius: 2vh;
+         align-items: center;
+         justify-content: space-between;
          opacity: 0.9;
          backdrop-filter: blur(2px);
+}
+article > p.footercim, article > h2.footercim{
+  font-size: 3vh;
 }
 
 footer article{
