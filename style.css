@@ -206,7 +206,7 @@ p{
   border:0.2vh dashed #385728;
   overflow: hidden;
   padding: 0;
-  width: 80%;
+  width: 85%;
   margin-top:1.5vh;
   transition:box-shadow 0.3s, transform 0.3s;
 }
@@ -214,10 +214,10 @@ p{
   box-shadow:0 0.3vh 1vh rgba(0, 0, 0, 0.5);
   transform: translateY(-1.5vh);
   cursor: pointer;
-  transition:transform 0.3s;
+  transition:transform 0.3s, box-shadow 0.3s;
 }
 .kartyaCim{
-  background-color: rgba(30, 167, 99, 0.5);
+  background-color: rgba(119, 215, 40, 0.892);
   padding: 1vh 2vh;
   display: flex;
   justify-content: space-between;
@@ -233,11 +233,24 @@ p{
   background-color: white;
   height: 10vh;
   overflow: hidden;
-}
-.kartyaContent p{
-  text-align: left;
-  margin: 0.8vh;
 
+}
+.kartyaContent *{
+  text-align: left;
+  padding:0;
+  margin: 0.5vh;
+}
+ul{
+  text-align: left;
+  padding: 0;
+  margin: 0;
+}
+li{
+  font-size: 1vh;
+  line-height: 2vh;
+  font-weight: bold;
+  list-style: none;
+  border-bottom: 0.1vh solid rgba(0, 0, 0, 0.114);
 }
 /*.mozgokepek {
   opacity: 0;
