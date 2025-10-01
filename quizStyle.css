@@ -1,0 +1,38 @@
+body{
+         margin: 0;
+         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+         background-image: url(/img/bodyhatter.jpg);
+         background-size: cover;
+         background-attachment: fixed;
+         background-repeat: no-repeat;
+}
+article{
+         background-color: rgb(26, 85, 112);
+         padding: 1vh;
+         display: block;
+}
+.vissza{
+         display:flex;
+         height: fit-content;
+         background-color: rgb(17, 55, 72);
+         border-radius: 1vh;
+         padding: 0;
+         border: 0.1vh solid rgb(40, 118, 154);
+}
+.vissza > a{
+         padding: 1vh;
+         color: white;
+         text-decoration: none;
+         font-size: 2vh;
+}
+.vissza:hover{
+         background-color: rgb(28, 75, 96);
+}
+.title{
+         display: flex;
+         justify-content: space-between;
+         align-items: center;
+}
+.title h1{
+         margin: 0;
+}
