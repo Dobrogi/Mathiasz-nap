@@ -60,18 +60,18 @@ input[type=range] {
 
 .formTarolo input[type=checkbox][name="kezdoAdat"]+label:hover {
          background-color: rgb(211, 211, 211);
-         transform: scale(1.15);
+         transform: scale(1.06);
 }
 
 .formTarolo input[type=checkbox][name="kezdoAdat"]:checked+label {
          border: 0.1vh solid rgba(0, 117, 251, 0.719);
          background-color: rgb(87, 221, 20);
-         transform: scale(1.1);
+         transform: scale(1.03);
 }
 
 .formTarolo input[type=checkbox][name="kezdoAdat"]:checked+label:hover {
          background-color: rgb(76, 187, 20);
-         transform: scale(1.2);
+         transform: scale(1.1);
 }
 
 .kezdoAdat {
@@ -98,13 +98,12 @@ input[type=range] {
          flex-wrap: wrap;
 }
 
-.vissza>a {
+.vissza > a{
          padding: 1vh;
          color: white;
          text-decoration: none;
          font-size: 2vh;
 }
-
 .vissza:hover {
          background-color: rgb(28, 75, 96);
 }
@@ -212,9 +211,15 @@ input::-webkit-outer-spin-button {
          box-shadow: 0 0.2vh 0.2vh rgba(0, 0, 0, 0.5);
          font-size: 2vh;
 }
-.ft{
-         width: fit-content;
-         height: 1vh;
-         display: flex;
-         align-items: center;
+.tablaGen{
+         padding: 2vh 4vh;
+         border-radius: 1vh;
+         border:0.1vh solid #444 ;
+         box-shadow: 0 0.5vh 0.5vh rgba(0, 0, 0, 0.453);
+         cursor: pointer;
+         font-size: 2vh;
+         transition: background-color 0.2s;
+}
+.tablaGen:hover{
+         background-color: rgb(160, 160, 160);
 }

@@ -36,10 +36,11 @@ function kiir() {
     document.getElementById("kiiros").innerText = `${document.getElementById("evsz").value} év`
 }
 function kezdoErtekLimit(elem, azon) {
+ 
     let mezok = document.querySelectorAll("div input[name=kezdoAdat]:checked")
     let inputok = document.querySelectorAll("section.ertekAdo aside:not(.marad) input")
     let asideok = document.querySelectorAll("section.ertekAdo aside:not(.marad)")
-    console.log(asideok);
+
 
     let hossz = 0
     mezok.forEach(e => {
@@ -48,7 +49,7 @@ function kezdoErtekLimit(elem, azon) {
     if (hossz > 2) {
         elem.checked = false;
         inputok[azon].disabled = true
-        alert("Legfeljebb kettő adat! Ugye nem akarsz kész feladatot csinálni?")
+        alert("Legfeljebb csak kettő kezdőérték lehet! Ugye nem akarsz kész feladatot csinálni?")
     }
     if (elem.checked) {
         inputok[azon].disabled = false
@@ -59,6 +60,7 @@ function kezdoErtekLimit(elem, azon) {
     }
     else {
         inputok[azon].disabled = true
+        inputok[azon].value = ''
         asideok[azon].classList.add("disabled")
         asideok[azon].classList.remove("enabled")
     }
