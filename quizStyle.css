@@ -1,38 +1,136 @@
-body{
+body {
          margin: 0;
          font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
          background-image: url(/img/bodyhatter.jpg);
          background-size: cover;
          background-attachment: fixed;
          background-repeat: no-repeat;
+         font-size: 2vh;
 }
-article{
+
+article {
          background-color: rgb(26, 85, 112);
          padding: 1vh;
          display: block;
 }
-.vissza{
-         display:flex;
+h3{
+         font-size: 2.9vh;
+         font-weight: normal;
+         margin: 1vh 0;
+}
+form {
+         display: block;
+         background-color: rgba(80, 202, 40, 0.739);
+         margin: 2vh 7vh;
+         border-radius: 3vh;
+         padding: 2vh 5vh;
+}
+span{
+         width: 8vh;
+}
+.formKulso {
+         display: flex;
+}
+
+hr {
+         color: rgba(0, 0, 0, 0.5);
+         border: 0.1vh solid rgba(0, 0, 0, 0.5);
+         box-shadow: 0 0.2vh 0.2vh rgba(0, 0, 0, 0.465);
+}
+
+input[type=number] {
+         border-radius: 0.6vh;
+         border: 0.2vh solid rgba(0, 0, 0, 0.279);
+         transition: 0.3s;
+         padding: 1vh;
+         font-size: 2vh;
+         width: 3vh;
+}
+input[type=number]:focus {
+         outline: none;
+         border: 0.2vh solid rgba(57, 93, 34, 0.719);
+         transition:all 0.3s;
+}
+input[type=range] {
+         width: 50%;
+         font-size: 2vh;
+}
+.formTarolo input[type=checkbox]{
+         display: none;
+}
+.formTarolo label:not([for=evsz]){
+         border: 0.1vh solid black;
+         border-radius: 1vh;
+         font-size: 2vh;
+         margin: 1vh 0;
+         width: 10vh;
+}
+.vissza {
+         display: flex;
          height: fit-content;
          background-color: rgb(17, 55, 72);
-         border-radius: 1vh;
+         border-radius: 2vh;
          padding: 0;
          border: 0.1vh solid rgb(40, 118, 154);
 }
-.vissza > a{
+
+.vissza>a {
          padding: 1vh;
          color: white;
          text-decoration: none;
          font-size: 2vh;
 }
-.vissza:hover{
+
+.vissza:hover {
          background-color: rgb(28, 75, 96);
 }
-.title{
+
+.title {
          display: flex;
          justify-content: space-between;
          align-items: center;
 }
-.title h1{
+
+.title h1 {
          margin: 0;
+}
+
+.tablaTitle {
+         text-align: center;
+}
+
+.formTarolo {
+         display: block;
+         background-color: aquamarine;
+         padding: 2vh;
+         text-align: center;
+         font-size: 3vh;
+         border-radius: 1vh;
+         width: 40%;
+         margin: auto;
+         height: fit-content;
+}
+.OHogyIdeIsKellEgyConainerAFlexnek{
+         display: flex;
+         justify-content: space-between;
+         padding: 0 5vh;
+
+}
+#tablazatSzulo {
+         background-color: rgba(80, 202, 40, 0.739);
+         margin: 2vh 7vh;
+         border-radius: 3vh;
+         padding: 2vh 5vh;
+         height: max-content;
+}
+/* Chrome, Safari, Edge */
+input::-webkit-inner-spin-button,
+input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
 }
