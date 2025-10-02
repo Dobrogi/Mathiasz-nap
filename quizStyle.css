@@ -13,11 +13,13 @@ article {
          padding: 1vh;
          display: block;
 }
-h3{
+
+h3 {
          font-size: 2.9vh;
          font-weight: normal;
          margin: 1vh 0;
 }
+
 form {
          display: block;
          background-color: rgba(80, 202, 40, 0.739);
@@ -25,9 +27,11 @@ form {
          border-radius: 3vh;
          padding: 2vh 5vh;
 }
-span{
+
+span {
          width: 8vh;
 }
+
 .formKulso {
          display: flex;
 }
@@ -35,36 +39,52 @@ span{
 hr {
          color: rgba(0, 0, 0, 0.5);
          border: 0.1vh solid rgba(0, 0, 0, 0.5);
-         box-shadow: 0 0.2vh 0.2vh rgba(0, 0, 0, 0.465);
+         box-shadow: 0 0.2vh 0.2vh rgba(0, 0, 0, 0.5);
 }
 
-input[type=number] {
-         border-radius: 0.6vh;
-         border: 0.2vh solid rgba(0, 0, 0, 0.279);
-         transition: 0.3s;
-         padding: 1vh;
-         font-size: 2vh;
-         width: 3vh;
-}
-input[type=number]:focus {
-         outline: none;
-         border: 0.2vh solid rgba(57, 93, 34, 0.719);
-         transition:all 0.3s;
-}
 input[type=range] {
-         width: 50%;
+         width: 70%;
          font-size: 2vh;
 }
-.formTarolo input[type=checkbox]{
+
+.formTarolo input[type=checkbox][name="kezdoAdat"] {
          display: none;
 }
-.formTarolo label:not([for=evsz]){
+
+.formTarolo input[type=checkbox][name="kezdoAdat"]+label {
+         background-color: white;
+         box-shadow: 0 0.2vh 0.2vh rgba(0, 0, 0, 0.5);
+         user-select: none;
+         cursor: pointer;
+}
+
+.formTarolo input[type=checkbox][name="kezdoAdat"]+label:hover {
+         background-color: rgb(211, 211, 211);
+         transform: scale(1.15);
+}
+
+.formTarolo input[type=checkbox][name="kezdoAdat"]:checked+label {
+         border: 0.1vh solid rgba(0, 117, 251, 0.719);
+         background-color: rgb(87, 221, 20);
+         transform: scale(1.1);
+}
+
+.formTarolo input[type=checkbox][name="kezdoAdat"]:checked+label:hover {
+         background-color: rgb(76, 187, 20);
+         transform: scale(1.2);
+}
+
+.kezdoAdat {
+         display: block;
          border: 0.1vh solid black;
          border-radius: 1vh;
          font-size: 2vh;
          margin: 1vh 0;
-         width: 10vh;
+         width: 100%;
+         padding: 1vh;
+         transition: transform 0.3s;
 }
+
 .vissza {
          display: flex;
          height: fit-content;
@@ -72,6 +92,10 @@ input[type=range] {
          border-radius: 2vh;
          padding: 0;
          border: 0.1vh solid rgb(40, 118, 154);
+}
+
+.valasztasok {
+         flex-wrap: wrap;
 }
 
 .vissza>a {
@@ -100,22 +124,27 @@ input[type=range] {
 }
 
 .formTarolo {
-         display: block;
-         background-color: aquamarine;
-         padding: 2vh;
+         display: inline;
+         background-color: rgba(13, 179, 102, 0.7);
+         box-shadow: 0 0.3vh 0.3vh rgba(0, 0, 0, 0.5);
+         border: 0.2vh solid rgba(24, 129, 80, 0.7);
+         padding: 2vh 0;
          text-align: center;
          font-size: 3vh;
          border-radius: 1vh;
          width: 40%;
          margin: auto;
-         height: fit-content;
+         height: 50vh;
+
 }
-.OHogyIdeIsKellEgyConainerAFlexnek{
+
+.OHogyIdeIsKellEgyConainerAFlexnek {
          display: flex;
          justify-content: space-between;
          padding: 0 5vh;
 
 }
+
 #tablazatSzulo {
          background-color: rgba(80, 202, 40, 0.739);
          margin: 2vh 7vh;
@@ -123,14 +152,69 @@ input[type=range] {
          padding: 2vh 5vh;
          height: max-content;
 }
+
 /* Chrome, Safari, Edge */
 input::-webkit-inner-spin-button,
 input::-webkit-outer-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
+         -webkit-appearance: none;
+         margin: 0;
 }
 
-/* Firefox */
-input[type=number] {
-  -moz-appearance: textfield;
+.maradvany {
+         background-color: rgb(202, 61, 61);
+         border-radius: 1vh;
+         padding: 0.5vh;
+         box-shadow: 0 0.3vh 0.3vh rgba(0, 0, 0, 0.5);
+}
+
+.ertekAdo aside {
+         display: flex;
+         font-size: 2vh;
+         justify-content: space-between;
+         padding: 0.6vh 4vh;
+         margin: 1vh 0;
+}
+
+.ertekAdo aside label {
+         padding: 0.6vh;
+         border-radius: 0.6vh;
+         box-shadow: 0 0.3vh 0.3vh rgba(0, 0, 0, 0.5);
+         margin: 0.5vh 0;
+
+}
+
+.ertekAdo aside:not(.marad) {
+         box-shadow: 0 0.3vh 0.3vh rgba(0, 0, 0, 0.5);
+}
+
+.disabled {
+         background-color: grey;
+         transition: background-color 0.3s;
+}
+.disabled label {
+         background-color: #444;
+}
+.enabled{
+         background-color: rgb(62, 174, 249);
+         transition: background-color 0.3s;
+}
+.enabled label{
+         background-color: rgb(39, 75, 219);
+         transition: background-color 0.3s;
+}
+.ertekAdo aside input {
+         outline: none;
+         border-radius: 1vh;
+         border: 0.1vh solid black;
+         text-indent: 0.5vh;
+         width: 45%;
+         transition: none;
+         box-shadow: 0 0.2vh 0.2vh rgba(0, 0, 0, 0.5);
+         font-size: 2vh;
+}
+.ft{
+         width: fit-content;
+         height: 1vh;
+         display: flex;
+         align-items: center;
 }

@@ -4,9 +4,8 @@ const mottok = ["„Minden kis lépés közelebb visz a célhoz.”","„Ma spó
 
 let kepkeres = document.getElementById("kepvetites")
 let mottokeres = document.getElementById("motto")*/
-
+/*
 let i = 0
-
 const carouselKepek = document.querySelectorAll("#kepvetites img")
 const carouselMotto = document.querySelectorAll("#motto p")
 
@@ -25,15 +24,42 @@ setInterval(() => {
         carouselKepek[elozo].classList.remove("after")
         carouselMotto[elozo].classList.remove("after")
     }, 1000);
-}, 3000);
+}, 3000);*/
 
 const osszesMain = document.querySelectorAll("body main")
 function navMenu(indeksz) {
     osszesMain.forEach(elem => elem.classList.remove("aktiv"))
     osszesMain[indeksz].classList.add("aktiv")
 }
-function kiir(){
+
+function kiir() {
     document.getElementById("kiiros").innerText = `${document.getElementById("evsz").value} év`
 }
+function kezdoErtekLimit(elem, azon) {
+    let mezok = document.querySelectorAll("div input[name=kezdoAdat]:checked")
+    let inputok = document.querySelectorAll("section.ertekAdo aside:not(.marad) input")
+    let asideok = document.querySelectorAll("section.ertekAdo aside:not(.marad)")
+    console.log(asideok);
+
+    let hossz = 0
+    mezok.forEach(e => {
+        if (e.checked) hossz++
+    });
+    if (hossz > 2) {
+        elem.checked = false;
+        inputok[azon].disabled = true
+        alert("Legfeljebb kettő adat! Ugye nem akarsz kész feladatot csinálni?")
+    }
+    if (elem.checked) {
+        inputok[azon].disabled = false
+        asideok[azon].classList.add("enabled")
+        asideok[azon].classList.remove("disabled")
 
 
+    }
+    else {
+        inputok[azon].disabled = true
+        asideok[azon].classList.add("disabled")
+        asideok[azon].classList.remove("enabled")
+    }
+}

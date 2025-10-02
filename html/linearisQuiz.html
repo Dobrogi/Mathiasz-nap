@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/quizStyle.css">
+    <title>Mathiász Gazdálkodás és Menedzsment - Lineáris módszer</title>
     <link rel="icon" type="image/x-icon" href="/img/money.png">
     <title>Document</title>
 </head>
@@ -26,17 +27,44 @@
 
             <section class="formTarolo"> <label for="evsz">Hány évig csökken az érték?</label><br>
                 <div class="OHogyIdeIsKellEgyConainerAFlexnek"><input oninput="kiir()" type="range" name="evsz"
-                        id="evsz" min="1" max="20" value="0"> <span id="kiiros">1 év</span>
+                        id="evsz" min="1" max="15" value="0"> <span id="kiiros">1 év</span>
                 </div>
                 <hr>
                 <h3>Mely értékek vannak megadva?</h3>
-                    <input type="checkbox" name="brutto" id="brutto"><label for="brutto">Bruttó</label>
-                    <input type="checkbox" name="ecs" id="ecs"><label for="ecs">Értékcsökkenés</label><br>
-                    <input type="checkbox" name="hecs" id="hecs"><label for="hecs">Halmozott Értékcsökkenés</label>
-                    <input type="checkbox" name="netto" id="netto"><label for="netto">Nettó</label>
+                <div class="OHogyIdeIsKellEgyConainerAFlexnek valasztasok">
+                    <input oninput="kezdoErtekLimit(this, 0)" type="checkbox" name="kezdoAdat" id="brutto"><label
+                        for="brutto" class="kezdoAdat">Bruttó</label>
+                    <input oninput="kezdoErtekLimit(this, 1)" type="checkbox" name="kezdoAdat" id="ecs"><label for="ecs"
+                        class="kezdoAdat">Értékcsökkenés</label>
+                    <input oninput="kezdoErtekLimit(this, 2)" type="checkbox" name="kezdoAdat" id="hecs"><label for="hecs"
+                        class="kezdoAdat">Halmozott Értékcsökkenés</label>
+                    <input oninput="kezdoErtekLimit(this, 3)" type="checkbox" name="kezdoAdat" id="netto"><label
+                        for="netto" class="kezdoAdat">Nettó</label>
+                </div>
             </section>
-            <section class="formTarolo">
-
+            <section class="formTarolo ertekAdo">
+                <h3>Értékadás</h3>
+                <hr>
+                <aside class="marad">
+                    <label class="maradvany" for="maradvany">Maradványérték</label>
+                    <input type="number" name="maradvany" id="maradvany">
+                </aside>
+                <aside class="disabled">
+                    <label for="bruttoI">Bruttó</label>
+                    <input disabled type="number" name="bruttoI" id="bruttoI">
+                </aside>
+                <aside class="disabled">
+                    <label for="ecsI">Értékcsökkenés</label>
+                    <input disabled type="number" name="ecsI" id="ecsI">
+                </aside>
+                <aside class="disabled">
+                    <label for="hecsI">Halmozott Écs</label>
+                    <input disabled type="number" name="hecsI" id="hecsI">
+                </aside>
+                <aside class="disabled">
+                    <label for="nettoI">Nettó</label>
+                    <input disabled type="number" name="nettoI" id="nettoI">
+                </aside>
             </section>
         </section>
     </form>
