@@ -65,3 +65,16 @@ function kezdoErtekLimit(elem, azon) {
         asideok[azon].classList.remove("enabled")
     }
 }
+function tablaGeneralas(){
+    let tablaSzulo = document.getElementById("tablaSzulo")
+    let ev = document.getElementById("evsz")
+        tablaSzulo.innerHTML = <table id="linTabla"></table>
+    let i = 0
+    for (i = 0; i < ev.value; i++) {
+        tablaSzulo.innerHTML = `<tr id="tablaRow${i}"></tr>`
+        let tablaRow = document.getElementById("tablaRow${i}")
+        for (let j = 0; j < 4; j++) {
+            tablaRow.innerHTML = `<td id="tableData${i};${j}"></td>`
+        }
+    }
+}

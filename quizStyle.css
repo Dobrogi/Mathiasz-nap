@@ -64,7 +64,7 @@ input[type=range] {
 }
 
 .formTarolo input[type=checkbox][name="kezdoAdat"]:checked+label {
-         border: 0.1vh solid rgba(0, 117, 251, 0.719);
+         border: 0.1vh solid rgba(0, 159, 82, 0.719);
          background-color: rgb(87, 221, 20);
          transform: scale(1.03);
 }
@@ -76,7 +76,7 @@ input[type=range] {
 
 .kezdoAdat {
          display: block;
-         border: 0.1vh solid black;
+         border: 0.1vh solid rgb(119, 119, 119);
          border-radius: 1vh;
          font-size: 2vh;
          margin: 1vh 0;
@@ -188,23 +188,24 @@ input::-webkit-outer-spin-button {
 
 .disabled {
          background-color: grey;
-         transition: background-color 0.3s;
+         transition: background-color 0.3s, color 0.3s;
 }
 .disabled label {
          background-color: #444;
 }
 .enabled{
          background-color: rgb(62, 174, 249);
-         transition: background-color 0.3s;
+         transition: background-color 0.3s, color 0.3s;
 }
 .enabled label{
          background-color: rgb(39, 75, 219);
-         transition: background-color 0.3s;
+         transition: background-color 0.3s, color 0.3s;
+         color: white;
 }
 .ertekAdo aside input {
          outline: none;
          border-radius: 1vh;
-         border: 0.1vh solid black;
+         border: 0.1vh solid rgb(101, 101, 101);
          text-indent: 0.5vh;
          width: 45%;
          transition: none;
@@ -214,7 +215,7 @@ input::-webkit-outer-spin-button {
 .tablaGen{
          padding: 2vh 4vh;
          border-radius: 1vh;
-         border:0.1vh solid #444 ;
+         border:0.1vh solid #656565 ;
          box-shadow: 0 0.5vh 0.5vh rgba(0, 0, 0, 0.453);
          cursor: pointer;
          font-size: 2vh;
@@ -222,4 +223,10 @@ input::-webkit-outer-spin-button {
 }
 .tablaGen:hover{
          background-color: rgb(160, 160, 160);
+}
+.linTabla tr td{ 
+    border-collapse: collapse;
+}
+.linTabla{
+    
 }

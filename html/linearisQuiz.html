@@ -47,7 +47,7 @@
                 <hr>
                 <aside class="marad">
                     <label class="maradvany" for="maradvany">Maradványérték</label>
-                    <input type="number" name="maradvany" id="maradvany">
+                    <input type="number" value="0" name="maradvany" id="maradvany">
                 </aside>
                 <aside class="disabled">
                     <label for="bruttoI">Bruttó</label>
@@ -65,8 +65,9 @@
                     <label for="nettoI">Nettó</label>
                     <input disabled type="number" name="nettoI" id="nettoI">
                 </aside>
-                <button class="tablaGen" type="button">Tábla készítése</button>
+                <button class="tablaGen" type="button" onclick="tablaGeneralas()">Tábla készítése</button>
             </section>
+<td id="tableData${i};${j}"></td>
         </section>
     </form>
     <section id="tablazatSzulo"></section>
