@@ -1,4 +1,22 @@
+body{
+         background-image: url(img/bodyhatter.jpg);
+         background-attachment: fixed;
+         background-repeat: no-repeat;
+         background-position: center;
+         background-size: cover;
+         
+}
 
+main{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+section{
+  justify-content: space-around;
+  margin: auto;
+  padding: 3%;
+}
 
 
 .kartya {
@@ -49,7 +67,7 @@
   width: 160%;
   border-radius: inherit;
   background: #0a3cff;
-  background: linear-gradient(to right, #0a3cff, #0a3cff);
+  background: linear-gradient(to right, #48c250, #074927);
   transform-origin: center;
   animation: moving 4.8s linear infinite paused;
   transition: all 0.88s cubic-bezier(0.23, 1, 0.32, 1);
@@ -84,3 +102,6 @@
     transform: rotate(360deg);
   }
 }
+
+
+
