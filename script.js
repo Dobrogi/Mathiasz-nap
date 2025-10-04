@@ -33,7 +33,7 @@ function navMenu(indeksz) {
 }
 
 function kiir() {
-    document.getElementById("kiiros").innerText = `${document.getElementById("evsz").value} év`
+    document.getElementById("kiiros").innerText = `${document.getElementById("linEvsz").value} év`
 }
 function kezdoErtekLimit(elem, azon) {
 
@@ -98,13 +98,13 @@ function tablaGeneralas() {
                 }
                 else if (i == parseInt(ev.value) && j == 4 && (maradvany.value != 0 || maradvany.value != "")) {
 
-                    tartalom += `<td id="linTableData${i}_${j}" class="linTablaMaradvany">${parseInt(maradvany.value)}</td>`
+                    tartalom += `<td id="linTableData${i}_${j}" class="linTablaMaradvany">${parseInt(maradvany.value)} Ft</td>`
                 }
                 else {
                     switch (j) {
-                        case 0: tartalom += `<td id="linTableData${i}_${j}" class="linEvek">${i}`; break;
-                        case 1: tartalom += `<td id="linTableData${i}_${j}" class="defaultValue">${brutto}`; break;
-                        case 2: tartalom += `<td id="linTableData${i}_${j}" class="defaultValue">${ecs}`; break;
+                        case 0: tartalom += `<td id="linTableData${i}_${j}" class="linEvek">${i}.év`; break;
+                        case 1: tartalom += `<td id="linTableData${i}_${j}" class="defaultValue">${brutto} Ft`; break;
+                        case 2: tartalom += `<td id="linTableData${i}_${j}" class="defaultValue">${ecs} Ft`; break;
                         default: tartalom += `<td id="linTableData${i}_${j}" contenteditable>`; break;
                     }
                     tartalom += "</td>"
