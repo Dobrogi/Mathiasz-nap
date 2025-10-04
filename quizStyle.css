@@ -1,232 +1,244 @@
 body {
-         margin: 0;
-         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-         background-image: url(/img/bodyhatter.jpg);
-         background-size: cover;
-         background-attachment: fixed;
-         background-repeat: no-repeat;
-         font-size: 2vh;
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-image: url(/img/bodyhatter.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    font-size: 2vh;
 }
 
 article {
-         background-color: rgb(26, 85, 112);
-         padding: 1vh;
-         display: block;
+    background-color: rgb(26, 85, 112);
+    padding: 1vh;
+    display: block;
 }
 
 h3 {
-         font-size: 2.9vh;
-         font-weight: normal;
-         margin: 1vh 0;
+    font-size: 2.9vh;
+    font-weight: normal;
+    margin: 1vh 0;
 }
 
 form {
-         display: block;
-         background-color: rgba(80, 202, 40, 0.739);
-         margin: 2vh 7vh;
-         border-radius: 3vh;
-         padding: 2vh 5vh;
+    display: block;
+    background-color: rgba(80, 202, 40, 0.739);
+    margin: 2vh 7vh;
+    border-radius: 3vh;
+    padding: 2vh 5vh;
 }
 
 span {
-         width: 8vh;
+    width: 8vh;
 }
 
 .formKulso {
-         display: flex;
+    display: flex;
 }
 
 hr {
-         color: rgba(0, 0, 0, 0.5);
-         border: 0.1vh solid rgba(0, 0, 0, 0.5);
-         box-shadow: 0 0.2vh 0.2vh rgba(0, 0, 0, 0.5);
+    color: rgba(0, 0, 0, 0.5);
+    border: 0.1vh solid rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0.2vh 0.2vh rgba(0, 0, 0, 0.5);
 }
 
 input[type=range] {
-         width: 70%;
-         font-size: 2vh;
+    width: 70%;
+    font-size: 2vh;
 }
 
-.formTarolo input[type=checkbox][name="kezdoAdat"] {
-         display: none;
-}
-
-.formTarolo input[type=checkbox][name="kezdoAdat"]+label {
-         background-color: white;
-         box-shadow: 0 0.2vh 0.2vh rgba(0, 0, 0, 0.5);
-         user-select: none;
-         cursor: pointer;
-}
-
-.formTarolo input[type=checkbox][name="kezdoAdat"]+label:hover {
-         background-color: rgb(211, 211, 211);
-         transform: scale(1.06);
-}
-
-.formTarolo input[type=checkbox][name="kezdoAdat"]:checked+label {
-         border: 0.1vh solid rgba(0, 159, 82, 0.719);
-         background-color: rgb(87, 221, 20);
-         transform: scale(1.03);
-}
-
-.formTarolo input[type=checkbox][name="kezdoAdat"]:checked+label:hover {
-         background-color: rgb(76, 187, 20);
-         transform: scale(1.1);
-}
 
 .kezdoAdat {
-         display: block;
-         border: 0.1vh solid rgb(119, 119, 119);
-         border-radius: 1vh;
-         font-size: 2vh;
-         margin: 1vh 0;
-         width: 100%;
-         padding: 1vh;
-         transition: transform 0.3s;
+    display: block;
+    border: 0.1vh solid rgb(119, 119, 119);
+    border-radius: 1vh;
+    font-size: 2vh;
+    margin: 1vh 0;
+    width: 100%;
+    padding: 1vh;
+    transition: transform 0.3s;
 }
 
 .vissza {
-         display: flex;
-         height: fit-content;
-         background-color: rgb(17, 55, 72);
-         border-radius: 2vh;
-         padding: 0;
-         border: 0.1vh solid rgb(40, 118, 154);
+    display: flex;
+    height: fit-content;
+    background-color: rgb(17, 55, 72);
+    border-radius: 2vh;
+    padding: 0;
+    border: 0.1vh solid rgb(40, 118, 154);
 }
 
 .valasztasok {
-         flex-wrap: wrap;
+    flex-wrap: wrap;
 }
 
-.vissza > a{
-         padding: 1vh;
-         color: white;
-         text-decoration: none;
-         font-size: 2vh;
+.vissza>a {
+    padding: 1vh;
+    color: white;
+    text-decoration: none;
+    font-size: 2vh;
 }
+
 .vissza:hover {
-         background-color: rgb(28, 75, 96);
+    background-color: rgb(28, 75, 96);
 }
 
 .title {
-         display: flex;
-         justify-content: space-between;
-         align-items: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .title h1 {
-         margin: 0;
+    margin: 0;
 }
 
 .tablaTitle {
-         text-align: center;
+    text-align: center;
 }
 
 .formTarolo {
-         display: inline;
-         background-color: rgba(13, 179, 102, 0.7);
-         box-shadow: 0 0.3vh 0.3vh rgba(0, 0, 0, 0.5);
-         border: 0.2vh solid rgba(24, 129, 80, 0.7);
-         padding: 2vh 0;
-         text-align: center;
-         font-size: 3vh;
-         border-radius: 1vh;
-         width: 40%;
-         margin: auto;
-         height: 50vh;
+    display: inline;
+    background-color: rgba(13, 179, 102, 0.7);
+    box-shadow: 0 0.3vh 0.3vh rgba(0, 0, 0, 0.5);
+    border: 0.2vh solid rgba(24, 129, 80, 0.7);
+    padding: 2vh 0;
+    text-align: center;
+    font-size: 3vh;
+    border-radius: 1vh;
+    width: fit-content;
+    margin: auto;
+
 
 }
 
 .OHogyIdeIsKellEgyConainerAFlexnek {
-         display: flex;
-         justify-content: space-between;
-         padding: 0 5vh;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 5vh;
 
 }
 
-#tablazatSzulo {
-         background-color: rgba(80, 202, 40, 0.739);
-         margin: 2vh 7vh;
-         border-radius: 3vh;
-         padding: 2vh 5vh;
-         height: max-content;
+#linTablaSzulo {
+    background-color: rgba(80, 202, 40, 0.739);
+    margin: 2vh 7vh;
+    border-radius: 3vh;
+    padding: 2vh 5vh;
+    height: max-content;
 }
 
 /* Chrome, Safari, Edge */
 input::-webkit-inner-spin-button,
 input::-webkit-outer-spin-button {
-         -webkit-appearance: none;
-         margin: 0;
+    -webkit-appearance: none;
+    margin: 0;
 }
 
 .maradvany {
-         background-color: rgb(202, 61, 61);
-         border-radius: 1vh;
-         padding: 0.5vh;
-         box-shadow: 0 0.3vh 0.3vh rgba(0, 0, 0, 0.5);
+    background-color: rgb(202, 61, 61);
+    border-radius: 1vh;
+    padding: 0.5vh;
+    box-shadow: 0 0.3vh 0.3vh rgba(0, 0, 0, 0.5);
+}
+
+#maradvany {
+    border: 0.1vh solid #838383;
+    border-radius: 0.5vh;
 }
 
 .ertekAdo aside {
-         display: flex;
-         font-size: 2vh;
-         justify-content: space-between;
-         padding: 0.6vh 4vh;
-         margin: 1vh 0;
+    display: flex;
+    font-size: 2vh;
+    justify-content: space-between;
+    padding: 0.6vh 4vh;
+    margin: 1vh 0;
 }
 
 .ertekAdo aside label {
-         padding: 0.6vh;
-         border-radius: 0.6vh;
-         box-shadow: 0 0.3vh 0.3vh rgba(0, 0, 0, 0.5);
-         margin: 0.5vh 0;
+    padding: 0.6vh;
+    border-radius: 0.6vh;
+    box-shadow: 0 0.3vh 0.3vh rgba(0, 0, 0, 0.5);
+    margin: 0.5vh 0;
 
 }
 
 .ertekAdo aside:not(.marad) {
-         box-shadow: 0 0.3vh 0.3vh rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0.3vh 0.3vh rgba(0, 0, 0, 0.5);
 }
 
 .disabled {
-         background-color: grey;
-         transition: background-color 0.3s, color 0.3s;
+    background-color: grey;
+    transition: background-color 0.3s, color 0.3s;
 }
+
 .disabled label {
-         background-color: #444;
+    background-color: #444;
 }
-.enabled{
-         background-color: rgb(62, 174, 249);
-         transition: background-color 0.3s, color 0.3s;
+
+.enabled {
+    background-color: rgb(130, 220, 27);
+    transition: background-color 0.3s, color 0.3s;
 }
-.enabled label{
-         background-color: rgb(39, 75, 219);
-         transition: background-color 0.3s, color 0.3s;
-         color: white;
+
+.enabled label {
+    background-color: rgb(49, 186, 31);
+    transition: background-color 0.3s, color 0.3s;
+    color: white;
 }
+
 .ertekAdo aside input {
-         outline: none;
-         border-radius: 1vh;
-         border: 0.1vh solid rgb(101, 101, 101);
-         text-indent: 0.5vh;
-         width: 45%;
-         transition: none;
-         box-shadow: 0 0.2vh 0.2vh rgba(0, 0, 0, 0.5);
-         font-size: 2vh;
+    outline: none;
+    border-radius: 0.5vh;
+    border: 0.1vh solid rgb(132, 132, 132);
+    text-indent: 0.5vh;
+    width: 45%;
+    transition: none;
+    box-shadow: 0 0.2vh 0.2vh rgba(0, 0, 0, 0.5);
+    font-size: 2vh;
 }
-.tablaGen{
-         padding: 2vh 4vh;
-         border-radius: 1vh;
-         border:0.1vh solid #656565 ;
-         box-shadow: 0 0.5vh 0.5vh rgba(0, 0, 0, 0.453);
-         cursor: pointer;
-         font-size: 2vh;
-         transition: background-color 0.2s;
+
+.tablaGen {
+    padding: 2vh 4vh;
+    border-radius: 1vh;
+    border: 0.1vh solid #656565;
+    box-shadow: 0 0.5vh 0.5vh rgba(0, 0, 0, 0.453);
+    cursor: pointer;
+    font-size: 2vh;
+    transition: background-color 0.2s;
 }
-.tablaGen:hover{
-         background-color: rgb(160, 160, 160);
+
+.tablaGen:hover {
+    background-color: rgb(160, 160, 160);
 }
-.linTabla tr td{ 
+
+#linTabla tr td,
+#linTabla tr,
+#linTabla{
     border-collapse: collapse;
+    border: 0.3vh solid#444;
+    width: 10%;
+    text-indent: 1vh;
 }
-.linTabla{
-    
+
+#linTabla {
+    background-color: rgb(239, 255, 211);
+    width: 90%;
+    margin: 0 auto;
+
+}
+.arnyek{
+    box-shadow: 0 0.5vh 0.5vh rgba(0, 0, 0, 0.453);
+}
+.linTableHeader {
+    background-color: rgb(110, 155, 31);
+}
+.defaultValue {
+        background-color: #31BA1F99;
+}
+.linEvek{
+    width: 1vh;
+    background-color: #65656599;
+}
+.linTablaMaradvany{
+    background-color: #c8222299;
 }

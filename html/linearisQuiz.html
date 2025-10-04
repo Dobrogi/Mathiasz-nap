@@ -25,52 +25,28 @@
         <hr>
         <section class="formKulso">
 
-            <section class="formTarolo"> <label for="evsz">Hány évig csökken az érték?</label><br>
-                <div class="OHogyIdeIsKellEgyConainerAFlexnek"><input oninput="kiir()" type="range" name="evsz"
-                        id="evsz" min="1" max="15" value="0"> <span id="kiiros">1 év</span>
+            <section class="formTarolo ertekAdo"> <label for="evsz">Hány évig csökken az érték?</label><br>
+                <div class="OHogyIdeIsKellEgyConainerAFlexnek"><input oninput="kiir()" type="range" name="linEvsz"
+                        id="linEvsz" min="1" max="15" value="0"> <span id="kiiros">1 év</span>
                 </div>
-                <hr>
-                <h3>Mely értékek vannak megadva?</h3>
-                <div class="OHogyIdeIsKellEgyConainerAFlexnek valasztasok">
-                    <input oninput="kezdoErtekLimit(this, 0)" type="checkbox" name="kezdoAdat" id="brutto"><label
-                        for="brutto" class="kezdoAdat">Bruttó</label>
-                    <input oninput="kezdoErtekLimit(this, 1)" type="checkbox" name="kezdoAdat" id="ecs"><label for="ecs"
-                        class="kezdoAdat">Értékcsökkenés</label>
-                    <input oninput="kezdoErtekLimit(this, 2)" type="checkbox" name="kezdoAdat" id="hecs"><label for="hecs"
-                        class="kezdoAdat">Halmozott Értékcsökkenés</label>
-                    <input oninput="kezdoErtekLimit(this, 3)" type="checkbox" name="kezdoAdat" id="netto"><label
-                        for="netto" class="kezdoAdat">Nettó</label>
-                </div>
-            </section>
-            <section class="formTarolo ertekAdo">
-                <h3>Értékadás</h3>
                 <hr>
                 <aside class="marad">
                     <label class="maradvany" for="maradvany">Maradványérték</label>
-                    <input type="number" value="0" name="maradvany" id="maradvany">
+                    <input type="number" required name="maradvany" id="linMaradvany">
                 </aside>
-                <aside class="disabled">
+                <aside class="enabled">
                     <label for="bruttoI">Bruttó</label>
-                    <input disabled type="number" name="bruttoI" id="bruttoI">
+                    <input type="number" name="bruttoI" id="linBrutto">
                 </aside>
-                <aside class="disabled">
+                <aside class="enabled">
                     <label for="ecsI">Értékcsökkenés</label>
-                    <input disabled type="number" name="ecsI" id="ecsI">
+                    <input type="number" name="ecsI" id="linEcs">
                 </aside>
-                <aside class="disabled">
-                    <label for="hecsI">Halmozott Écs</label>
-                    <input disabled type="number" name="hecsI" id="hecsI">
-                </aside>
-                <aside class="disabled">
-                    <label for="nettoI">Nettó</label>
-                    <input disabled type="number" name="nettoI" id="nettoI">
-                </aside>
-                <button class="tablaGen" type="button" onclick="tablaGeneralas()">Tábla készítése</button>
+                <button class="tablaGen"  type="button" onclick="tablaGeneralas()">Tábla készítése</button>
             </section>
-<td id="tableData${i};${j}"></td>
         </section>
     </form>
-    <section id="tablazatSzulo"></section>
+    <section id="linTablaSzulo"></section>
     <script src="/script.js"></script>
 </body>
 
