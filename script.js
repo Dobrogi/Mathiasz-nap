@@ -5,7 +5,6 @@ const mottok = ["„Minden kis lépés közelebb visz a célhoz.”","„Ma spó
 let kepkeres = document.getElementById("kepvetites")
 let mottokeres = document.getElementById("motto")*/
 
-let i = 0
 const carouselKepek = document.querySelectorAll("#kepvetites img")
 const carouselMotto = document.querySelectorAll("#motto p")
 /*
@@ -65,20 +64,32 @@ function kezdoErtekLimit(elem, azon) {
         asideok[azon].classList.remove("enabled")
     }
 }
+let linContenteditableCount = 0;
 function tablaGeneralas() {
     let tablaSzulo = document.getElementById("linTablaSzulo")
-    let ev = document.getElementById("linEvsz")
-    let maradvany = document.getElementById("linMaradvany")
+    let ev = document.getElementById("linEvsz").value
+    let maradvany = document.getElementById("linMaradvany").value
     let brutto = document.getElementById("linBrutto").value
     let ecs = document.getElementById("linEcs").value
     let tartalom = '<table id="linTabla" class="arnyek">'
-
+    linContenteditableCount = 0;
+    console.log(brutto, ecs, maradvany);
+    
     if (brutto == "" || ecs == "")
         alert("Számok nélkül nehéz számolni, tölts ki minden mezőt!")
+    else if(brutto < ecs){
+        alert("Azért akkorát csak nem csökken az érték! Ne legyen az értékcsökkenés nagyobb mint a bruttó!")
+    }
+    else if (brutto < maradvany){
+        alert("Hogyan csökkentesz felfele? A maraványérték ne legyen nagyob a bruttónál!")
+    }
+    else if(brutto-(ev*ecs) < 0){
+        alert("A nettó le fog menni minuszba, azt meg nem akarjuk! Vagy túl nagy az értékcsökkenés, vagy túl kicsi a bruttó")
+    }
     else {
         let i = 0
         let j = 0
-        for (i = 0; i < (parseInt(ev.value) + 1); i++) {
+        for (i = 0; i < (parseInt(ev) + 1); i++) {
 
 
             tartalom += `<tr id="linTableRow${i}">`
@@ -86,7 +97,7 @@ function tablaGeneralas() {
             for (j = 0; j < 5; j++) {
 
                 if (i == 0) {
-                    tartalom += `<td id="linTableData${i}_${j}" class="linTableHeader">`
+                    tartalom += `<td class="linTableHeader">`
                     switch (j) {
                         case 0: tartalom += "Évek"; break;
                         case 1: tartalom += "Bruttó"; break;
@@ -96,16 +107,16 @@ function tablaGeneralas() {
                     }
                     tartalom += `</td>`
                 }
-                else if (i == parseInt(ev.value) && j == 4 && (maradvany.value != 0 || maradvany.value != "")) {
+                else if (i == parseInt(ev) && j == 4 && !(parseInt(maradvany) == 0 || maradvany == "")) {
 
-                    tartalom += `<td id="linTableData${i}_${j}" class="linTablaMaradvany">${parseInt(maradvany.value)} Ft</td>`
+                    tartalom += `<td class="linTablaMaradvany">${parseInt(maradvany)} Ft</td>`
                 }
                 else {
                     switch (j) {
-                        case 0: tartalom += `<td id="linTableData${i}_${j}" class="linEvek">${i}.év`; break;
-                        case 1: tartalom += `<td id="linTableData${i}_${j}" class="defaultValue">${brutto} Ft`; break;
-                        case 2: tartalom += `<td id="linTableData${i}_${j}" class="defaultValue">${ecs} Ft`; break;
-                        default: tartalom += `<td id="linTableData${i}_${j}" contenteditable>`; break;
+                        case 0: tartalom += `<td class="linEvek">${i}.év`; break;
+                        case 1: tartalom += `<td class="defaultValue">${brutto} Ft`; break;
+                        case 2: tartalom += `<td class="defaultValue">${ecs} Ft`; break;
+                        default: tartalom += `<td class="linEditableContent" contenteditable data-sor="${i}" data-oszlop="${j}"> `; linContenteditableCount++; break;
                     }
                     tartalom += "</td>"
                 }
@@ -114,5 +125,69 @@ function tablaGeneralas() {
         }
         tartalom += "</table>"
         tablaSzulo.innerHTML = tartalom
-    }
+
+        document.querySelectorAll(".linEditableContent").forEach(cella => {
+            cella.addEventListener("keydown", key => {
+                if (key.key === "Enter") {
+                    
+                    key.preventDefault();
+                    linTablaEllenorzes(cella, parseInt(cella.dataset.sor), parseInt(cella.dataset.oszlop), ev, maradvany, brutto, ecs)
+                }
+            })
+        })
+    };
+}
+
+
+function linTablaEllenorzes(cella, sor, oszlop, ev, maradvany, brutto, ecs) {
+    if (cella.classList.contains("linEditableContent") && !cella.classList.contains("linTablaMaradvany"))
+        switch (oszlop) {
+            case 3:
+                if (parseInt(sor) == ev) {
+                    if (parseInt(cella.innerText) == (sor * ecs - maradvany)) {
+                        cella.classList.add("correctAwnser");
+                        cella.classList.remove("wrongAwnser");
+                    }
+                    else {
+                        cella.classList.add("wrongAwnser");
+                        cella.classList.remove("correctAwnser");
+                        cella.innerText = parseInt(sor * ecs - maradvany)
+                        setTimeout(() => {
+                            cella.classList.remove("wrongAwnser");
+                        }, 1000);
+                    }
+                }
+                else {
+                    if (parseInt(cella.innerText) == sor * ecs) {
+                        cella.classList.add("correctAwnser");
+                        cella.classList.remove("wrongAwnser");
+                    }
+                    else {
+                        cella.classList.add("wrongAwnser");
+                        cella.classList.remove("correctAwnser");
+                        cella.innerText = parseInt(sor * ecs)
+                        setTimeout(() => {
+                            cella.classList.remove("wrongAwnser");
+                        }, 1000);
+                    }
+                }
+                break;
+
+            case 4:
+                if (parseInt(sor) != ev) {
+                    if (parseInt(cella.innerText) == (brutto-(sor * ecs))) {
+                        cella.classList.add("correctAwnser");
+                        cella.classList.remove("wrongAwnser");
+                    }
+                    else {
+                        cella.classList.add("wrongAwnser");
+                        cella.classList.remove("correctAwnser");
+                        cella.innerText = parseInt(brutto-(sor * ecs))
+                        setTimeout(() => {
+                            cella.classList.remove("wrongAwnser");
+                        }, 1000);
+                    }
+                }
+                break;
+        }
 }

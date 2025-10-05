@@ -213,7 +213,7 @@ input::-webkit-outer-spin-button {
 
 #linTabla tr td,
 #linTabla tr,
-#linTabla{
+#linTabla {
     border-collapse: collapse;
     border: 0.3vh solid#444;
     width: 10%;
@@ -221,24 +221,45 @@ input::-webkit-outer-spin-button {
 }
 
 #linTabla {
+    width: fit-content;
     background-color: rgb(239, 255, 211);
-    width: 90%;
     margin: 0 auto;
 
 }
-.arnyek{
+
+.arnyek {
     box-shadow: 0 0.5vh 0.5vh rgba(0, 0, 0, 0.453);
 }
+
 .linTableHeader {
     background-color: rgb(110, 155, 31);
 }
+
 .defaultValue {
-        background-color: #31BA1F99;
+    background-color: #454545ca;
 }
-.linEvek{
+
+.linEvek {
     width: 1vh;
-    background-color: #65656599;
+    background-color: #313131d9;
 }
-.linTablaMaradvany{
-    background-color: #c8222299;
+
+.linTablaMaradvany {
+    background-color: #f7151599;
+}
+
+.linEditableContent {
+    overflow: hidden;
+    background-color: #ffffff99;
+    outline: none;
+    transition: background-color 0.3s;
+    border: black;
+}
+
+.correctAwnser {
+    background-color: rgb(61, 163, 78);
+}
+
+.wrongAwnser {
+    background-color: rgb(182, 60, 60);
 }
