@@ -72,13 +72,11 @@ function tablaGeneralas() {
     let brutto = document.getElementById("linBrutto").value
     let tartalom = '<table id="linTabla" class="arnyek">'
     linContenteditableCount = 0;
-    console.log(brutto, maradvany);
 
-    if (parseInt(brutto) <= 0)
+    if (parseInt(brutto) <= 0 || brutto == "")
         alert("Számok nélkül nehéz számolni, tölts ki minden mezőt!")
     else if (parseInt(brutto) < parseInt(maradvany)) {
-        console.log(brutto, maradvany);
-        alert("Hogyan csökkentesz felfele? A maraványérték ne legyen nagyob a bruttónál!")
+        alert("Felfele kicsit nehéz csökkenteni. A maraványérték ne legyen nagyob a bruttónál!")
     }
     else {
         let i = 0
@@ -119,32 +117,40 @@ function tablaGeneralas() {
         tartalom += "</table>"
         tablaSzulo.innerHTML = tartalom
 
-        document.querySelectorAll(".linEditableContent").forEach(cella => {
+        document.querySelectorAll(".linEditableContent").forEach(cella =>
             cella.addEventListener("keydown", key => {
                 if (key.key === "Enter") {
-
                     key.preventDefault();
                     linTablaEllenorzes(cella, parseInt(cella.dataset.sor), parseInt(cella.dataset.oszlop), ev, maradvany, brutto)
                 }
             })
-        })
+        )
+        document.querySelectorAll(".linEditableContent").forEach(cella =>
+            cella.addEventListener("blur", key => {
+                    key.preventDefault();
+                    linTablaEllenorzes(cella, parseInt(cella.dataset.sor), parseInt(cella.dataset.oszlop), ev, maradvany, brutto)
+            })
+        )
+
     };
 }
 
 
 function linTablaEllenorzes(cella, sor, oszlop, ev, maradvany, brutto) {
-    const ecs = parseInt((sor - maradvany)/ev);
+    const ecs = parseInt((brutto - maradvany) / ev);
     if (cella.classList.contains("linEditableContent") && !cella.classList.contains("linTablaMaradvany"))
         switch (oszlop) {
             case 2: {
-                if (parseInt(cella.innerText) == ecs) {
+                if (parseInt(cella.innerText) == (ecs)) {
                     cella.classList.add("correctAwnser");
                     cella.classList.remove("wrongAwnser");
+                    cella.innerText = `${cella.innerText.trim()} Ft`
+                    cella.contentEditable = false
                 }
                 else {
                     cella.classList.add("wrongAwnser");
                     cella.classList.remove("correctAwnser");
-                    console.log(parseInt(ecs));
+                    cella.innerText = ""
                     setTimeout(() => {
                         cella.classList.remove("wrongAwnser");
                     }, 1000);
@@ -152,52 +158,40 @@ function linTablaEllenorzes(cella, sor, oszlop, ev, maradvany, brutto) {
                 break;
             }
             case 3:
-                if (parseInt(sor) == ev) {
-                    if (parseInt(cella.innerText) == (sor * (ecs) - maradvany)) {
-                        cella.classList.add("correctAwnser");
-                        cella.classList.remove("wrongAwnser");
-                    }
-                    else {
-                        cella.classList.add("wrongAwnser");
-                        cella.classList.remove("correctAwnser");
-                        console.log(sor * (ecs) - maradvany);
-                        setTimeout(() => {
-                            cella.classList.remove("wrongAwnser");
-                        }, 1000);
-                    }
+
+                if (parseInt(cella.innerText) == sor * ecs) {
+                    cella.classList.add("correctAwnser");
+                    cella.classList.remove("wrongAwnser");
+                    cella.innerText = `${cella.innerText.trim()} Ft`
+                    cella.contentEditable = false
                 }
                 else {
-                    if (parseInt(cella.innerText) == sor * ecs) {
-                        cella.classList.add("correctAwnser");
+                    cella.classList.add("wrongAwnser");
+                    cella.classList.remove("correctAwnser");
+                    cella.innerText = ""
+                    setTimeout(() => {
                         cella.classList.remove("wrongAwnser");
-                    }
-                    else {
-                        cella.classList.add("wrongAwnser");
-                        cella.classList.remove("correctAwnser");
-                        cella.innerText = parseInt(sor * ecs)
+                    }, 1000);
 
-                        setTimeout(() => {
-                            cella.classList.remove("wrongAwnser");
-                        }, 1000);
-                    }
                 }
                 break;
 
             case 4:
-                if (parseInt(sor) != ev) {
-                    if (parseInt(cella.innerText) == (brutto - (sor * ecs))) {
-                        cella.classList.add("correctAwnser");
-                        cella.classList.remove("wrongAwnser");
-                    }
-                    else {
-                        cella.classList.add("wrongAwnser");
-                        cella.classList.remove("correctAwnser");
-                        cella.innerText = parseInt(brutto - (sor * ecs))
-                        setTimeout(() => {
-                            cella.classList.remove("wrongAwnser");
-                        }, 1000);
-                    }
+                if (parseInt(cella.innerText) == maradvany) {
+                    cella.classList.add("correctAwnser");
+                    cella.classList.remove("wrongAwnser");
+                    cella.innerText = `${cella.innerText.trim()} Ft`
+                    cella.contentEditable = false
                 }
+                else {
+                    cella.classList.add("wrongAwnser");
+                    cella.classList.remove("correctAwnser");
+                    cella.innerText = ""
+                    setTimeout(() => {
+                        cella.classList.remove("wrongAwnser");
+                    }, 1000);
+                }
+
                 break;
         }
 }

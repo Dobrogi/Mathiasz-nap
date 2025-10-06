@@ -25,20 +25,21 @@
         <hr>
         <section class="formKulso">
 
-            <section class="formTarolo ertekAdo"> <label for="evsz">Hány évig csökken az érték?</label><br>
+            <section class="formTarolo ertekAdo"> <label for="evsz">Hány év a tervezett használati idő?</label><br>
                 <div class="OHogyIdeIsKellEgyConainerAFlexnek"><input oninput="kiir()" type="range" name="linEvsz"
                         id="linEvsz" min="1" max="15" value="0"> <span id="kiiros">1 év</span>
                 </div>
                 <hr>
-                <aside class="marad">
-                    <label class="maradvany" for="maradvany">Maradványérték</label>
-                    <input type="number" required name="maradvany" id="linMaradvany">
-                </aside>
                 <aside class="enabled">
                     <label for="bruttoI">Bruttó</label>
                     <input type="number" name="bruttoI" id="linBrutto">
                 </aside>
-                <button class="tablaGen"  type="button" onclick="tablaGeneralas()">Tábla készítése</button>
+                <aside class="marad">
+                    <label class="maradvany" for="maradvany">Maradványérték</label>
+                    <input type="number" required name="maradvany" id="linMaradvany">
+                </aside>
+
+                <button class="tablaGen" type="button" onclick="tablaGeneralas()">Tábla készítése</button>
             </section>
         </section>
     </form>
