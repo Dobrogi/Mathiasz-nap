@@ -102,7 +102,7 @@ function tablaGeneralas() {
                 else if (i == parseInt(ev) && j == 4 && !(parseInt(maradvany) == 0 || maradvany == "")) {
 
                     tartalom += `<td class="linTablaMaradvany">${parseInt(maradvany)} Ft</td>`
-                }
+                 }
                 else {
                     switch (j) {
                         case 0: tartalom += `<td class="linEvek">${i}.év`; break;
@@ -127,8 +127,8 @@ function tablaGeneralas() {
         )
         document.querySelectorAll(".linEditableContent").forEach(cella =>
             cella.addEventListener("blur", key => {
-                    key.preventDefault();
-                    linTablaEllenorzes(cella, parseInt(cella.dataset.sor), parseInt(cella.dataset.oszlop), ev, maradvany, brutto)
+                key.preventDefault();
+                linTablaEllenorzes(cella, parseInt(cella.dataset.sor), parseInt(cella.dataset.oszlop), ev, maradvany, brutto)
             })
         )
 
@@ -137,6 +137,8 @@ function tablaGeneralas() {
 
 
 function linTablaEllenorzes(cella, sor, oszlop, ev, maradvany, brutto) {
+    console.log(sor, oszlop, ev, 4);
+    
     const ecs = parseInt((brutto - maradvany) / ev);
     if (cella.classList.contains("linEditableContent") && !cella.classList.contains("linTablaMaradvany"))
         switch (oszlop) {
@@ -144,7 +146,7 @@ function linTablaEllenorzes(cella, sor, oszlop, ev, maradvany, brutto) {
                 if (parseInt(cella.innerText) == (ecs)) {
                     cella.classList.add("correctAwnser");
                     cella.classList.remove("wrongAwnser");
-                    cella.innerText = `${cella.innerText.trim()} Ft`
+                    cella.innerText = `${ecs} Ft`
                     cella.contentEditable = false
                 }
                 else {
@@ -162,7 +164,7 @@ function linTablaEllenorzes(cella, sor, oszlop, ev, maradvany, brutto) {
                 if (parseInt(cella.innerText) == sor * ecs) {
                     cella.classList.add("correctAwnser");
                     cella.classList.remove("wrongAwnser");
-                    cella.innerText = `${cella.innerText.trim()} Ft`
+                    cella.innerText = `${sor * ecs} Ft`
                     cella.contentEditable = false
                 }
                 else {
@@ -177,20 +179,39 @@ function linTablaEllenorzes(cella, sor, oszlop, ev, maradvany, brutto) {
                 break;
 
             case 4:
-                if (parseInt(cella.innerText) == maradvany) {
-                    cella.classList.add("correctAwnser");
-                    cella.classList.remove("wrongAwnser");
-                    cella.innerText = `${cella.innerText.trim()} Ft`
-                    cella.contentEditable = false
+                if (sor == parseInt(ev) && oszlop == 4) {
+                    if (parseInt(cella.innerText) == maradvany) {
+                        cella.classList.add("correctAwnser");
+                        cella.classList.remove("wrongAwnser");
+                        cella.innerText = `${maradvany} Ft`
+                        cella.contentEditable = false
+                    }
+                    else {
+                        cella.classList.add("wrongAwnser");
+                        cella.classList.remove("correctAwnser");
+                        cella.innerText = ""
+                        setTimeout(() => {
+                            cella.classList.remove("wrongAwnser");
+                        }, 1000);
+                    }
                 }
                 else {
-                    cella.classList.add("wrongAwnser");
-                    cella.classList.remove("correctAwnser");
-                    cella.innerText = ""
-                    setTimeout(() => {
+                    if (parseInt(cella.innerText) == brutto - (ecs * parseInt(sor))) {
+                        cella.classList.add("correctAwnser");
                         cella.classList.remove("wrongAwnser");
-                    }, 1000);
+                        cella.innerText = `${brutto - (ecs * parseInt(sor))} Ft`
+                        cella.contentEditable = false
+                    }
+                    else {
+                        cella.classList.add("wrongAwnser");
+                        cella.classList.remove("correctAwnser");
+                        cella.innerText = ""
+                        setTimeout(() => {
+                            cella.classList.remove("wrongAwnser");
+                        }, 1000);
+                    }
                 }
+
 
                 break;
         }
