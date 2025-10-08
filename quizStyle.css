@@ -116,7 +116,6 @@ input[type=range] {
     display: flex;
     justify-content: space-between;
     padding: 0 5vh;
-
 }
 
 #linTablaSzulo {
@@ -166,14 +165,6 @@ input::-webkit-outer-spin-button {
     box-shadow: 0 0.3vh 0.3vh rgba(0, 0, 0, 0.5);
 }
 
-.disabled {
-    background-color: grey;
-    transition: background-color 0.3s, color 0.3s;
-}
-
-.disabled label {
-    background-color: #444;
-}
 
 .enabled {
     background-color: rgb(130, 220, 27);
@@ -186,7 +177,7 @@ input::-webkit-outer-spin-button {
     color: white;
 }
 
-.ertekAdo aside input {
+.ertekAdo aside input, .elkInput{
     outline: none;
     border-radius: 0.5vh;
     border: 0.1vh solid rgb(132, 132, 132);
@@ -262,4 +253,10 @@ input::-webkit-outer-spin-button {
 
 .wrongAwnser {
     background-color: rgb(182, 60, 60);
+}
+.disabled{
+    display: none;
+}
+.elk{
+    width: 50vh;
 }

@@ -92,17 +92,17 @@ function tablaGeneralas() {
                     tartalom += `<td class="linTableHeader">`
                     switch (j) {
                         case 0: tartalom += "Évek"; break;
-                        case 1: tartalom += "Bruttó"; break;
-                        case 2: tartalom += "Értékcsökkenés"; break;
-                        case 3: tartalom += "Halmozott Écs"; break;
-                        case 4: tartalom += "Nettó"; break;
+                        case 1: tartalom += "Bruttó (Ft)"; break;
+                        case 2: tartalom += "Értékcsökkenés (Ft)"; break;
+                        case 3: tartalom += "Halmozott Écs (Ft)"; break;
+                        case 4: tartalom += "Nettó (Ft)"; break;
                     }
                     tartalom += `</td>`
                 }
                 else if (i == parseInt(ev) && j == 4 && !(parseInt(maradvany) == 0 || maradvany == "")) {
 
                     tartalom += `<td class="linTablaMaradvany">${parseInt(maradvany)} Ft</td>`
-                 }
+                }
                 else {
                     switch (j) {
                         case 0: tartalom += `<td class="linEvek">${i}.év`; break;
@@ -114,7 +114,7 @@ function tablaGeneralas() {
             }
             tartalom += "</tr>"
         }
-        tartalom += "</table>"
+        tartalom += '</table>'
         tablaSzulo.innerHTML = tartalom
 
         document.querySelectorAll(".linEditableContent").forEach(cella =>
@@ -138,7 +138,7 @@ function tablaGeneralas() {
 
 function linTablaEllenorzes(cella, sor, oszlop, ev, maradvany, brutto) {
     console.log(sor, oszlop, ev, 4);
-    
+
     const ecs = parseInt((brutto - maradvany) / ev);
     if (cella.classList.contains("linEditableContent") && !cella.classList.contains("linTablaMaradvany"))
         switch (oszlop) {
@@ -179,7 +179,7 @@ function linTablaEllenorzes(cella, sor, oszlop, ev, maradvany, brutto) {
                 break;
 
             case 4:
-                if (sor == parseInt(ev) && oszlop == 4) {
+                if (sor == parseInt(ev) && oszlop == 4 && maradvany > 0) {
                     if (parseInt(cella.innerText) == maradvany) {
                         cella.classList.add("correctAwnser");
                         cella.classList.remove("wrongAwnser");
@@ -215,4 +215,20 @@ function linTablaEllenorzes(cella, sor, oszlop, ev, maradvany, brutto) {
 
                 break;
         }
+    if (cella.classList.contains("linEvesLeirasiKulcs")) {
+        if (parseInt(cella.innerText) == parseInt(brutto / ev)) {
+            cella.classList.add("correctAwnser");
+            cella.classList.remove("wrongAwnser");
+            cella.innerText = `${parseInt(brutto / ev)} Ft`
+            cella.contentEditable = false
+        }
+        else {
+            cella.classList.add("wrongAwnser");
+            cella.classList.remove("correctAwnser");
+            cella.innerText = ""
+            setTimeout(() => {
+                cella.classList.remove("wrongAwnser");
+            }, 1000);
+        }
+    }
 }
