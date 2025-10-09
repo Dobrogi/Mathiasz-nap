@@ -177,7 +177,7 @@ input::-webkit-outer-spin-button {
     color: white;
 }
 
-.ertekAdo aside input, .elkInput{
+.ertekAdo aside input, #elkInput{
     outline: none;
     border-radius: 0.5vh;
     border: 0.1vh solid rgb(132, 132, 132);
