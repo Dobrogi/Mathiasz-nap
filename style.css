@@ -133,6 +133,20 @@ main{
          padding-bottom: 30vh;
          overflow: hidden;
 }
+
+main section{
+  width: 50%;
+}
+
+.kezdolapsection{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.kezdolapsection article{
+  width: 100%;
+}
+
 .aktiv{
   display: flex;
 }
@@ -202,10 +216,9 @@ p{
 }
 #kartyaSzulo{
   display: flex;
-  justify-content: space-between;
-  align-items: center;
   width: 100%;
-
+  justify-content: space-around;
+  align-items: center;
 }
 .kartya{
   border:0.2vh dashed #385728;
@@ -330,9 +343,42 @@ article > p.footercim, article > h2.footercim{
   nav button{
     width: 80%;
     margin: 2vh;
+    word-wrap: break-word;
   }
 
   h1{
     font-size: 2vv;
   }
+
+  main{
+    flex-wrap: wrap;
+  }
+
+  main section{
+    width: 100%;
+  }
+
+  #kepvetites{
+    margin: auto;
+    display: block;
+    width: 50%;
+  }
+
+  h2{
+    text-align: center;
+  }
+
+  p{
+    text-align: center;
+  }
+
+  #motto{
+    margin: auto;
+  }
+
+  #kartyaSzulo{
+    flex-wrap: wrap;
+  }
+
 }
+
