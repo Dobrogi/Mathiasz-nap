@@ -173,7 +173,7 @@ h2{
          font-weight: bolder;
 }
 p{
-         font-size: 1.3vh;
+         font-size: 2vh;
          text-align: center;
 }
 
@@ -184,7 +184,7 @@ p{
   width: 60vh ; 
   overflow:hidden;
 }#motto{
-  height: 3vh;
+  height: 5vh;
 }
 #kepvetites img, #motto p{
   position: absolute;
@@ -258,13 +258,20 @@ p{
   padding:0;
   margin: 0.5vh;
 }
+
+.tananyagkartya{
+  width: 50%;
+  margin: auto;
+}
+
+
 ul{
   text-align: left;
   padding: 0;
   margin: 0;
 }
 li{
-  font-size: 1vh;
+  font-size: 1.5vh;
   line-height: 2vh;
   font-weight: bold;
   list-style: none;
@@ -361,7 +368,7 @@ article > p.footercim, article > h2.footercim{
   #kepvetites{
     margin: auto;
     display: block;
-    width: 50%;
+    width: 100%;
   }
 
   h2{

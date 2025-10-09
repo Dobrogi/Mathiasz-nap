@@ -7,7 +7,7 @@ let mottokeres = document.getElementById("motto")*/
 
 const carouselKepek = document.querySelectorAll("#kepvetites img")
 const carouselMotto = document.querySelectorAll("#motto p")
-/*
+i = 0
 setInterval(() => {
     const elozo = i
     i = (i + 1) % carouselKepek.length
@@ -23,7 +23,7 @@ setInterval(() => {
         carouselKepek[elozo].classList.remove("after")
         carouselMotto[elozo].classList.remove("after")
     }, 1000);
-}, 3000);*/
+}, 5000);
 
 const osszesMain = document.querySelectorAll("body main")
 function navMenu(indeksz) {
