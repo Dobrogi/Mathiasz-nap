@@ -138,6 +138,7 @@ function tablaGeneralas() {
 
 function linTablaEllenorzes(cella, sor, oszlop, ev, maradvany, brutto) {
     console.log(sor, oszlop, ev, 4);
+    querySelectorAll(".disabled").classList.remove("disabled")
 
     const ecs = parseInt((brutto - maradvany) / ev);
     if (cella.classList.contains("linEditableContent") && !cella.classList.contains("linTablaMaradvany"))
