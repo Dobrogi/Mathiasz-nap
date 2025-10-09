@@ -28,16 +28,23 @@ header {
 h1 {
          background-color: #749BC2b2;
          text-align: center;
-         border-radius: 2vh;
+         border-radius: 2vv;
          word-wrap: break-word;
-         font-size: 6vh;
-        letter-spacing: 1.5vh;
-        font-style: italic;
+         font-size: 6vv;
+         letter-spacing: 1.5vh;
+         font-style: italic;
 }
 
 nav {
          margin: 2vh 7vh;
+         display: flex;
+         flex-wrap: wrap;
+         justify-content: space-around;
+         background-color: #7f9c70;
+         padding: 5vh;
 }
+
+
 
 table,
 tr, td {
@@ -45,13 +52,13 @@ tr, td {
          background-color: #7f9c70;
          transition: background-color 0.15s ease;
          text-align: center;
-         border-radius: 1vh;
+         padding: 2vh;
 }
 
 tr {
          display: flex;
+         flex-wrap: wrap;
          justify-content: space-between;
-         width: 100%;
          background-color: #84AE92;
          padding: 0.4vh;
 
@@ -64,11 +71,9 @@ table {
          background-color: #F0F0F0;
 }
 
-td {
-         display: flex;
-         justify-content: center;
+td {    
+        text-align: center;
          align-items: center;
-         width: 22%;
          border: 0.1vh solid #b4d8b1;
          margin: 0.3vh;
          border-radius: 1vh;
@@ -289,7 +294,8 @@ table{
 
 
 footer{
-        display: flex;
+         display: flex;
+         flex-wrap: wrap;
          background-color: rgba(109, 151, 87, 0.8);
          text-align: center;
          align-items: center;
@@ -301,9 +307,6 @@ article > p.footercim, article > h2.footercim{
   font-size: 3vh;
 }
 
-footer article{
-  width: 33.3%;
-}
 
 .footercim{
   font-size: 5vh;
@@ -311,4 +314,25 @@ footer article{
 
 .footerszoveg{
   font-size: 2.2vh;
+}
+
+
+@media only screen and (max-width: 400px) {
+  footer article{
+    width: 100%;
+  }
+
+  .footerKep{
+    margin: auto;
+    display: block;
+  }
+
+  nav button{
+    width: 80%;
+    margin: 2vh;
+  }
+
+  h1{
+    font-size: 2vv;
+  }
 }
