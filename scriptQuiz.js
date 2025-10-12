@@ -26,12 +26,25 @@
         "365", "366", "367"
     ];
 
-
-let random_number;
+let sum = 0
 const notallowed_number = []
+let random_number = Math.floor(Math.random() * 10);
+document.getElementById("kerdes").innerHTML = questions[random_number]
+document.getElementById("valasz1").innerHTML = answers[(random_number*3)+2]
+document.getElementById("valasz2").innerHTML = answers[(random_number*3)+1]
+document.getElementById("valasz3").innerHTML = answers[random_number*3]
+
+notallowed_number.push(random_number)
+
 function Valaszkezeles()
 { 
-     
+    
+    let user_answer = parseInt(document.quiz.valasz.value)
+    if (user_answer == right_answers_index[random_number])
+    {
+        sum += 1
+    }
+
     if (notallowed_number.length!=10){
         do {
          random_number = Math.floor(Math.random() * 10);
@@ -39,10 +52,12 @@ function Valaszkezeles()
     }
 
     else{
-        alert("Minden kérdés ki lett választva.");
+        alert("Minden kérdés ki lett választva.\n\nÖsszesen: " + sum + " pontot értél el.");
         let founder = document.getElementById("quiz")
         founder.classList.add("eltuntet")
     }
+
+
 
     document.getElementById("kerdes").innerHTML = questions[random_number]
     document.getElementById("valasz1").innerHTML = answers[(random_number*3)+2]
