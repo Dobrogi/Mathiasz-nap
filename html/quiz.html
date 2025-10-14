@@ -14,12 +14,18 @@
         <br>
        <form name="quiz" id="quiz">
 
-        <label for="kerdes" id="kerdes"></label><br>
-        <input type="radio" name="valasz" id="v1" value="2"><span id="valasz1"></span><br>
-        <input type="radio" name="valasz" id="v2" value="1"><span id="valasz2"></span><br>
-        <input type="radio" name="valasz" id="v3" value="0"><span id="valasz3"></span><br>
-        <br><br>
-        <button onclick="Valaszkezeles()" type="button"><span>Beküld</span></button>
+        <div class="kerdes">
+           <label for="kerdes" id="kerdes"></label><br> 
+        </div>
+
+        <div class="radiogombok">
+            <input type="radio" name="valasz" id="v1" value="2" class="elsoinput"><span id="valasz1"></span><br>
+            <input type="radio" name="valasz" id="v2" value="1"><span id="valasz2"></span><br>
+            <input type="radio" name="valasz" id="v3" value="0"><span id="valasz3"></span><br>
+            <br><br>
+            <button onclick="Valaszkezeles()" type="button"><span>Beküld</span></button>
+        </div>
+        
        </form>
 
        <section id="oklevel" class="eredmeny">
