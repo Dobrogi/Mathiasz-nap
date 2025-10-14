@@ -1,34 +1,30 @@
     const questions = [
-        "Melyik évben kezdődött a második világháború?",
-        "Mi a víz kémiai képlete?",
-        "Melyik bolygó van a Naphoz legközelebb?",
-        "Ki írta a 'Hamlet' című művet?",
-        "Mi Magyarország fővárosa?",
-        "Melyik szám prímszám?",
-        "Mi az angol megfelelője a 'könyv' szónak?",
-        "Melyik programnyelv?",
-        "Melyik évszak következik az ősz után?",
-        "Hány napból áll egy szökőév?"
+        "Melyik állítás igaz?",
+        "Melyik állítás igaz?",
+        "Melyik állítás hamis?",
+        "Milyen vagyontárgyaira számol el a vállalkozás érékcsökkenést?",
+        "Mire nem számolhat el a vállalkozás értékcsökkenést?",
+        "Melyik nem  az értékcsökkenés számítás módszere?",
+        "Egészítsd ki a mondatot!  A tárgyi eszközök, immateriális javak élettartamának végén realizálható érték a/az ……………………………….",
+        "Melyik állítás igaz?",
     ];
 
-    const right_answers_index = [1, 0, 1, 0, 2, 1, 0, 0, 0, 1];
+    const right_answers_index = [2, 1, 2, 2, 0, 0, 2, 0];
 
     const answers = [
-        "1937", "1939", "1941",
-        "H₂O", "CO₂", "O₂",
-        "Mars", "Merkúr", "Vénusz",
-        "William Shakespeare", "Charles Dickens", "Jókai Mór",
-        "Debrecen", "Pécs", "Budapest",
-        "9", "11", "15",
-        "book", "table", "chair",
-        "Python", "HTML", "Google",
-        "Tél", "Nyár", "Tavasz",
-        "365", "366", "367"
+        "Az értékcsökkenés a befektetett javak elhasználódásának, műszaki – gazdasági avulásának pénzben kifejezett értéke. ", "Az értékcsökkenés a forgóeszközök elhasználódásának, műszaki – gazdasági avulásának pénzben kifejezett értéke. ", "Egyik válasz sem igaz",
+        "A számvitelben  az értékcsökkenést a bevételek között számoljuk el.", "A számvitelben  az értékcsökkenést a költségek között számoljuk el.", "A számvitelben  az értékcsökkenést a pénzeszközök között számoljuk el.",
+        "Az értékcsökkenés azonos az értékcsökkenési leírással. ", "Az értékcsökkenés a vállalkozás eszközeinek fizikai kopásának és egyben erkölcsi avulásának pénzben kifejezett értéke", "Az értékcsökkenési leírás az értékcsökkenés költségként elszámolt része. ",
+        "ingatlanok, műszaki gépek és berendezések, egyéb gépek és berendezések, járművek", "ingatlanok, műszaki berendezések, járművek", "találmányok, ingatlanok, műszaki gépek és berendezések, járművek ",
+        "a földterület, a telkek", "a nullára leírt eszközök után", "mindkettő válasz helyes",
+        "Egyösszegű leírás", "Időarányos leírás", "Teljesítmény-értékelő leírás",
+        "maradványérték", "nettó érték", "mindkét válasz helyes",
+        "Teljesítmény arányos  értékcsökkenést számolhatunk el bruttó érték alapján", "Teljesítmény arányos  értékcsökkenést számolhatunk el nettó érték alapján", "Mindkettő válasz helyes",
     ];
 
 let sum = 0
 const notallowed_number = []
-let random_number = Math.floor(Math.random() * 10);
+let random_number = Math.floor(Math.random() * 7);
 document.getElementById("kerdes").innerHTML = questions[random_number]
 document.getElementById("valasz1").innerHTML = answers[(random_number*3)+2]
 document.getElementById("valasz2").innerHTML = answers[(random_number*3)+1]
@@ -45,14 +41,14 @@ function Valaszkezeles()
         sum += 1
     }
 
-    if (notallowed_number.length!=10){
+    if (notallowed_number.length!=7){
         do {
-         random_number = Math.floor(Math.random() * 10);
+         random_number = Math.floor(Math.random() * 7);
     } while (notallowed_number.includes(random_number));
     }
 
     else{
-        alert("Minden kérdés ki lett választva.\n\nÖsszesen: " + sum + " pontot értél el.");
+        alert("Minden kérdés ki lett választva.\n\nÖsszesen: " + sum + " / 7 pontot értél el.");
         let founder = document.getElementById("quiz")
         let founder2 = document.getElementById("oklevel")
         founder.classList.add("eltuntet")
