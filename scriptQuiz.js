@@ -54,7 +54,9 @@ function Valaszkezeles()
     else{
         alert("Minden kérdés ki lett választva.\n\nÖsszesen: " + sum + " pontot értél el.");
         let founder = document.getElementById("quiz")
+        let founder2 = document.getElementById("oklevel")
         founder.classList.add("eltuntet")
+        founder2.classList.add("megjelenit")
     }
 
 

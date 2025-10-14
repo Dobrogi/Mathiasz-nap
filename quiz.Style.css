@@ -27,7 +27,7 @@ button {
  outline: none;
  cursor: pointer;
  border: none;
- padding: 4vh 5vh;
+ padding: 3vh 4vh;
  margin: 0;
  font-family: inherit;
  font-size: inherit;
@@ -78,6 +78,34 @@ button:hover::before {
 
 .eltuntet{
     display: none;
+}
+
+.eredmeny{
+    display: none;
+    padding: 10vh;
+    margin: auto;
+    width: 35%;
+    background-color: white;
+    border-radius: 10vh;
+    background: linear-gradient(to right, rgba(30, 167, 99, 0.5), rgba(169, 231, 81, 0.5));
+    opacity: 0.8;
+    transition: width 2s;
+}
+
+.eredmeny:hover{
+    width: 55%;
+}
+
+.megjelenit
+{
+    display: block;
+}
+
+h1{
+    text-align: center;
+    font-style: italic;
+    font-weight: lighter;
+    font-size: 5vh;
 }
 
 
