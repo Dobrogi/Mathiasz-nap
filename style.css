@@ -36,11 +36,12 @@ h1 {
 }
 
 nav {
+        border-radius: 2vh;
          margin: 2vh 7vh;
          display: flex;
          flex-wrap: wrap;
          justify-content: space-around;
-         background-color: #7f9c70;
+         background-color: rgba(109, 151, 87, 0.8);
          padding: 5vh;
 }
 
@@ -349,8 +350,9 @@ article > p.footercim, article > h2.footercim{
 
   nav button{
     width: 80%;
-    margin: 2vh;
     word-wrap: break-word;
+    text-align: center;
+    padding: 2vh;
   }
 
   h1{
