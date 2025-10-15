@@ -160,6 +160,12 @@ article{
     display: block;
 }
 
+#okleveleredmeny{
+    text-align: center;
+    font-style: italic;
+    font-weight: bolder;
+}
+
 h1{
     text-align: center;
     font-style: italic;
