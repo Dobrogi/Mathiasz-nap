@@ -7,23 +7,28 @@ let mottokeres = document.getElementById("motto")*/
 
 const carouselKepek = document.querySelectorAll("#kepvetites img")
 const carouselMotto = document.querySelectorAll("#motto p")
-i = 0
-setInterval(() => {
-    const elozo = i
-    i = (i + 1) % carouselKepek.length
-    carouselKepek[elozo].classList.remove("aktiv")
-    carouselMotto[elozo].classList.remove("aktiv")
+try {
+    i = 0
+    setInterval(() => {
+        const elozo = i
+        i = (i + 1) % carouselKepek.length
+        carouselKepek[elozo].classList.remove("aktiv")
+        carouselMotto[elozo].classList.remove("aktiv")
 
-    carouselKepek[elozo].classList.add("after")
-    carouselMotto[elozo].classList.add("after")
+        carouselKepek[elozo].classList.add("after")
+        carouselMotto[elozo].classList.add("after")
 
-    carouselKepek[i].classList.add("aktiv")
-    carouselMotto[i].classList.add("aktiv")
-    setTimeout(() => {
-        carouselKepek[elozo].classList.remove("after")
-        carouselMotto[elozo].classList.remove("after")
-    }, 1000);
-}, 5000);
+        carouselKepek[i].classList.add("aktiv")
+        carouselMotto[i].classList.add("aktiv")
+        setTimeout(() => {
+            carouselKepek[elozo].classList.remove("after")
+            carouselMotto[elozo].classList.remove("after")
+        }, 1000);
+    }, 5000);
+}
+catch (ex) {
+    console.log("w")
+}
 
 const osszesMain = document.querySelectorAll("body main")
 function navMenu(indeksz) {
@@ -116,6 +121,16 @@ function tablaGeneralas() {
         }
         tartalom += '</table>'
         tablaSzulo.innerHTML = tartalom
+        tablaSzulo.innerHTML += `
+        <section class="elk disabled" id="#elk"> 
+        <label for="elkInput" class="elkLabel">Éves leírási kulcs</label>
+        <input  type="number" name="elk" id="elkInput">
+        </section>`
+        
+        let dis = document.querySelector("section.disabled")
+        if (dis) {
+            dis.classList.remove("disabled")
+        }
 
         document.querySelectorAll(".linEditableContent").forEach(cella =>
             cella.addEventListener("keydown", key => {
@@ -137,8 +152,9 @@ function tablaGeneralas() {
 
 
 function linTablaEllenorzes(cella, sor, oszlop, ev, maradvany, brutto) {
-    console.log(sor, oszlop, ev, 4);
-    querySelectorAll(".disabled").classList.remove("disabled")
+
+
+
 
     const ecs = parseInt((brutto - maradvany) / ev);
     if (cella.classList.contains("linEditableContent") && !cella.classList.contains("linTablaMaradvany"))
