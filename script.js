@@ -120,8 +120,8 @@ function tablaGeneralas() {
         tartalom += '</table>'
         tablaSzulo.innerHTML = `
         <section class="elk" id="#elk"> 
-        <label for="elkInput" class="elkLabel">Éves leírási kulcs</label>
-        <input type="number" name="elk" id="elkInput">
+        <label for="elkInput" class="elkLabel">Éves leírási kulcs (%)</label>
+        <input type="text" name="elk" contenteditable id="elkInput">
         </section>`
         tablaSzulo.innerHTML += tartalom
 
@@ -146,15 +146,19 @@ function tablaGeneralas() {
 }
 function agyEsemenyHallgatot() {
     let elk = document.getElementById("elkInput")
-    if (elk) {
-        elk.addEventListener("blur", key => {
+    elk.addEventListener("keydown", key => {
+        if (key.key === "Enter") {
             key.preventDefault()
             elkEllenorzes();
-            console.log("mag")
+        }
+    })
+    elk.addEventListener("blur", key => {
+        key.preventDefault()
+        elkEllenorzes();
+    })
 
-        })
-    }
 }
+
 
 function linTablaEllenorzes(cella, sor, oszlop, ev, maradvany, brutto) {
     const ecs = parseInt((brutto - maradvany) / ev);
@@ -253,23 +257,21 @@ function linTablaEllenorzes(cella, sor, oszlop, ev, maradvany, brutto) {
 
 
 function elkEllenorzes() {
-    console.log("asdasdasd");
     let ev = document.getElementById("linEvsz").value
     let elk = document.getElementById("elkInput")
-    if (elk.innerText == 100 / ev) {
-        if (parseInt(elk.innerText) == 100 / ev) {
-            elk.classList.add("correctAwnser");
+    if (parseInt(elk.value) === 100 / ev) {
+        elk.classList.add("correctAwnser");
+        elk.classList.remove("wrongAwnser");
+        elk.value = `${100 / ev} %`
+        elk.disabled = true
+        /*elk.readOnly = true*/
+    }
+    else {
+        elk.classList.add("wrongAwnser");
+        elk.classList.remove("correctAwnser");
+        elk.value = ``
+        setTimeout(() => {
             elk.classList.remove("wrongAwnser");
-            elk.innerText = `${100 / ev} %`
-            elk.disabled = true
-        }
-        else {
-            elk.classList.add("wrongAwnser");
-            elk.classList.remove("correctAwnser");
-            elk.innerText = ""
-            setTimeout(() => {
-                elk.classList.remove("wrongAwnser");
-            }, 1000);
-        }
+        }, 1000);
     }
 }

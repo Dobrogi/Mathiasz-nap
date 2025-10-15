@@ -265,6 +265,7 @@ input::-webkit-outer-spin-button {
     text-align: center;
     box-shadow: var(--boxShadow);
     border-radius: 2vh;
+    transition: background-color 0.3s;
 }
 .elkLabel{
     background-color: rgb(226, 247, 122);
@@ -275,5 +276,6 @@ input::-webkit-outer-spin-button {
 }
 #elkInput{
     height: 100%;
-    
+    color: black;
+    transition: background-color 0.3s;
 }
