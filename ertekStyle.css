@@ -260,7 +260,7 @@ input::-webkit-outer-spin-button {
 .elk{
     display: block;
     width: fit-content;
-    background-color: rgb(197, 210, 111);
+    background-color: rgba(197, 210, 111, 0.575);
     padding: 2vh;
     text-align: center;
     box-shadow: var(--boxShadow);
@@ -269,11 +269,11 @@ input::-webkit-outer-spin-button {
 .elkLabel{
     background-color: rgb(226, 247, 122);
     margin: 1vh 0;
-    padding: 0.5vh;
+    padding: 0.1vh;
     box-shadow: var(--boxShadow);
     border-radius: 1vh;
 }
 #elkInput{
     height: 100%;
-
+    
 }

@@ -69,14 +69,12 @@ function kezdoErtekLimit(elem, azon) {
         asideok[azon].classList.remove("enabled")
     }
 }
-let linContenteditableCount = 0;
 function tablaGeneralas() {
     let tablaSzulo = document.getElementById("linTablaSzulo")
     let ev = document.getElementById("linEvsz").value
     let maradvany = document.getElementById("linMaradvany").value
     let brutto = document.getElementById("linBrutto").value
     let tartalom = '<table id="linTabla" class="arnyek">'
-    linContenteditableCount = 0;
 
     if (parseInt(brutto) <= 0 || brutto == "")
         alert("Számok nélkül nehéz számolni, tölts ki minden mezőt!")
@@ -112,7 +110,7 @@ function tablaGeneralas() {
                     switch (j) {
                         case 0: tartalom += `<td class="linEvek">${i}.év`; break;
                         case 1: tartalom += `<td class="defaultValue">${brutto} Ft`; break;
-                        default: tartalom += `<td class="linEditableContent" contenteditable data-sor="${i}" data-oszlop="${j}"> `; linContenteditableCount++; break;
+                        default: tartalom += `<td class="linEditableContent" contenteditable data-sor="${i}" data-oszlop="${j}"> `; break;
                     }
                     tartalom += "</td>"
                 }
@@ -120,17 +118,12 @@ function tablaGeneralas() {
             tartalom += "</tr>"
         }
         tartalom += '</table>'
-        tablaSzulo.innerHTML = tartalom
-        tablaSzulo.innerHTML += `
-        <section class="elk disabled" id="#elk"> 
+        tablaSzulo.innerHTML = `
+        <section class="elk" id="#elk"> 
         <label for="elkInput" class="elkLabel">Éves leírási kulcs</label>
-        <input  type="number" name="elk" id="elkInput">
+        <input type="number" name="elk" id="elkInput">
         </section>`
-        
-        let dis = document.querySelector("section.disabled")
-        if (dis) {
-            dis.classList.remove("disabled")
-        }
+        tablaSzulo.innerHTML += tartalom
 
         document.querySelectorAll(".linEditableContent").forEach(cella =>
             cella.addEventListener("keydown", key => {
@@ -146,16 +139,24 @@ function tablaGeneralas() {
                 linTablaEllenorzes(cella, parseInt(cella.dataset.sor), parseInt(cella.dataset.oszlop), ev, maradvany, brutto)
             })
         )
+        agyEsemenyHallgatot()
+
 
     };
 }
+function agyEsemenyHallgatot() {
+    let elk = document.getElementById("elkInput")
+    if (elk) {
+        elk.addEventListener("blur", key => {
+            key.preventDefault()
+            elkEllenorzes();
+            console.log("mag")
 
+        })
+    }
+}
 
 function linTablaEllenorzes(cella, sor, oszlop, ev, maradvany, brutto) {
-
-
-
-
     const ecs = parseInt((brutto - maradvany) / ev);
     if (cella.classList.contains("linEditableContent") && !cella.classList.contains("linTablaMaradvany"))
         switch (oszlop) {
@@ -245,6 +246,29 @@ function linTablaEllenorzes(cella, sor, oszlop, ev, maradvany, brutto) {
             cella.innerText = ""
             setTimeout(() => {
                 cella.classList.remove("wrongAwnser");
+            }, 1000);
+        }
+    }
+}
+
+
+function elkEllenorzes() {
+    console.log("asdasdasd");
+    let ev = document.getElementById("linEvsz").value
+    let elk = document.getElementById("elkInput")
+    if (elk.innerText == 100 / ev) {
+        if (parseInt(elk.innerText) == 100 / ev) {
+            elk.classList.add("correctAwnser");
+            elk.classList.remove("wrongAwnser");
+            elk.innerText = `${100 / ev} %`
+            elk.disabled = true
+        }
+        else {
+            elk.classList.add("wrongAwnser");
+            elk.classList.remove("correctAwnser");
+            elk.innerText = ""
+            setTimeout(() => {
+                elk.classList.remove("wrongAwnser");
             }, 1000);
         }
     }
