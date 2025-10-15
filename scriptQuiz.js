@@ -53,6 +53,42 @@ function Valaszkezeles()
         let founder2 = document.getElementById("oklevel")
         founder.classList.add("eltuntet")
         founder2.classList.add("megjelenit")
+        
+        let result = document.getElementById("okleveleredmeny");
+        if (sum == 7)
+        {
+            result.innerHTML = "7 pont – 🧠 Tökéletes! Mester vagy a gazdaság és menedzsment témában!"
+        }
+
+        else if (sum == 6)
+        {
+            result.innerHTML = "6 pont – 💼 Nagyon jó! Csak egy hajszál választ el a tökéletestől."
+        }
+
+         else if (sum == 5)
+        {
+            result.innerHTML = "5 pont – 📈 Szép munka! A tudásod stabil és jól használható."
+        }
+
+         else if (sum == 4)
+        {
+            result.innerHTML = "4 pont – 📘 Nem rossz! Az alapok mennek, de van még mit csiszolni."
+        }
+
+        else if (sum == 3)
+        {
+            result.innerHTML = "3 pont – 🔍 Fejlődő szint. Jó kezdés, érdemes tovább gyakorolni."
+        }
+
+        else if (sum == 1 || sum == 2)
+        {
+            result.innerHTML = "1–2 pont – 🪄 Kezdő szint. Ne csüggedj, a gyakorlás meghozza a sikert!"
+        }
+
+        else
+        {
+            result.innerHTML = "0 pont – 💤 Hoppá! Itt az idő egy kis tanulásra – újra neki lehet futni!"
+        }
     }
 
 
