@@ -20,8 +20,8 @@
     <nav class="nav">
         <button onclick="navMenu(0)">Kezdőlap</button>
         <button onclick="navMenu(1)">Tananyagok</button>
-        <button onclick="navMenu(2)">Értékcsökkenés számítás</button>
-        <button onclick="navMenu(3)">Quiz</button>
+        <button onclick="navMenu(2)">Quiz</button>
+        <button onclick="navMenu(3)">Értékcsökkenés számítás</button>
     </nav>
 
 
@@ -71,7 +71,23 @@ A megtett kilométerek, az esetleges sérülések, az autó életkora folyamatos
                 </a>
             </article>
     </main>
-    <main id="ertekcsokkenesmain">Ert</main>
+
+    <main id="ertekcsokkenesmain">
+        <article class="kartya tananyagkartya">
+                <a href="/html/quiz.html">
+                    <div class="kartyaCim">
+                        <p>Ugrás a quiz-hez</p>
+                        <p>→</p>
+                    </div>
+                    <div class="kartyaContent">
+                        <ul>
+                            <li>- Teszteld a tudásod a gazdaság, vállalatirányítás és menedzsment világából – jó szórakozást és sok sikert!</li>
+                        </ul>
+                    </div>
+                </a>
+            </article>
+    </main>
+
     <main id="quizmain">
         <section id="kartyaSzulo">
             <article class="kartya">
@@ -126,7 +142,7 @@ A megtett kilométerek, az esetleges sérülések, az autó életkora folyamatos
             </article>
         </section>
     </main>
-    <main id="ertekcsokkenesmain">quiz</main>
+   
     <footer>
         <article class="footerKep">
             <img src="img/mathiaszlogo.png" alt="Mathiász logo" class="mathiaszlogo">

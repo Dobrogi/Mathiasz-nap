@@ -148,7 +148,6 @@ article{
     background-color: white;
     border-radius: 10vh;
     background: linear-gradient(to right, rgba(30, 167, 99, 0.5), rgba(169, 231, 81, 0.5));
-    opacity: 0.8;
     transition: width 2s;
 }
 

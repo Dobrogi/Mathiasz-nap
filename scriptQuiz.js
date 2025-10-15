@@ -48,7 +48,7 @@ function Valaszkezeles()
     }
 
     else{
-        alert("Minden kérdés ki lett választva.\n\nÖsszesen: " + sum + " / 7 pontot értél el.");
+        alert("Minden kérdés ki lett választva.");
         let founder = document.getElementById("quiz")
         let founder2 = document.getElementById("oklevel")
         founder.classList.add("eltuntet")
