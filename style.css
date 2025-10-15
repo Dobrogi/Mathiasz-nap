@@ -21,12 +21,13 @@ header {
          border: 0.2vh solid #96A78D;
          padding: 20vh 10vh;
          box-shadow: 0 1vh 0.4vh rgba(50, 50, 50, 0.293);
-         margin: 0 7vh;
+         margin: 0vh 7vh;
          backdrop-filter: blur(2px);
 }
 
 h1 {
-         background-color: #749BC2b2;
+        border-radius: 2vh;
+        background-color: rgba(97, 171, 194, 0.5);
          text-align: center;
          border-radius: 2vv;
          word-wrap: break-word;
@@ -45,59 +46,18 @@ nav {
          padding: 5vh;
 }
 
-
-
-table,
-tr, td {
-         border-collapse: collapse;
-         background-color: #7f9c70;
-         transition: background-color 0.15s ease;
-         text-align: center;
-         padding: 2vh;
+nav button{
+    padding: 2vh;
+    margin: 1vh;
+    border-radius: 2vh;
+    cursor: pointer;
+    word-wrap: break-word;
 }
 
-tr {
-         display: flex;
-         flex-wrap: wrap;
-         justify-content: space-between;
-         background-color: #84AE92;
-         padding: 0.4vh;
 
-}
-
-table {
-         width: 100%;
-         border-radius: 1vh;
-         height: 10vh;
-         background-color: #F0F0F0;
-}
-
-td {    
-        text-align: center;
-         align-items: center;
-         border: 0.1vh solid #b4d8b1;
-         margin: 0.3vh;
-         border-radius: 1vh;
-         background-color: #6d9757;
-         margin-bottom: 1vh;
-         box-shadow: 0 0.1vh 0.1vh rgba(0, 0, 0, 0.5);
-         transition: box-shadow 0.3s ease;
-         transition: margin 0.3s ease;
-         transition: padding 0.3s ease;
-         height: 8vh;
-         cursor: pointer;
-}
-
-td:hover {
-         border-collapse: collapse;
+nav button:hover {
          color: 0.2vh solid #96A78D;
          background-color: #8fb18c;
-         padding: 0 0.8vh;
-         box-shadow: 0 0.2vh 0.5vh rgba(0, 0, 0, 0.5);
-         transition: background-color 0.15s ease;
-         transition: box-shadow 0.15s ease;
-         transition: margin 0.3s ease;
-         transition: padding 0.3s ease;
 }
 
 a {
@@ -338,7 +298,7 @@ article > p.footercim, article > h2.footercim{
 }
 
 
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 500px) {
   footer article{
     width: 100%;
   }
@@ -350,15 +310,11 @@ article > p.footercim, article > h2.footercim{
 
   nav button{
     width: 80%;
-    font-style: italic;
-    word-wrap: break-word;
-    text-align: center;
-    padding: 10vh;
-    cursor: pointer;
   }
 
-  h1{
-    font-size: 2vv;
+  header{
+    padding: 2vh;
+    margin: 2vh;
   }
 
   main{
@@ -372,7 +328,7 @@ article > p.footercim, article > h2.footercim{
   #kepvetites{
     margin: auto;
     display: block;
-    width: 40%;
+    width: 100%;
   }
 
   h2{
@@ -384,7 +340,7 @@ article > p.footercim, article > h2.footercim{
   }
 
   #motto{
-    margin: auto;
+    word-wrap: break-word;
   }
 
   #kartyaSzulo{
