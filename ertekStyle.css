@@ -1,6 +1,8 @@
-:root{
+:root {
     --boxShadow: 0 0.5vh 0.5vh rgba(0, 0, 0, 0.5);
+    --hatterTrans: background-color 0.3s;
 }
+
 body {
     margin: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -123,6 +125,7 @@ input[type=range] {
 
 #linTablaSzulo {
     background-color: rgba(80, 202, 40, 0.739);
+    height: 100%;
     margin: 2vh 7vh;
     border-radius: 3vh;
     padding: 2vh 5vh;
@@ -153,6 +156,10 @@ input::-webkit-outer-spin-button {
     justify-content: space-between;
     padding: 0.6vh 4vh;
     margin: 1vh 0;
+    height: fit-content;
+    flex-wrap: wrap;
+    text-align: center;
+
 }
 
 .ertekAdo aside label {
@@ -160,6 +167,7 @@ input::-webkit-outer-spin-button {
     border-radius: 0.6vh;
     box-shadow: 0 0.3vh 0.3vh rgba(0, 0, 0, 0.5);
     margin: 0.5vh 0;
+    margin: auto;
 
 }
 
@@ -177,7 +185,8 @@ input::-webkit-outer-spin-button {
     color: white;
 }
 
-.ertekAdo aside input, #elkInput{
+.ertekAdo aside input,
+#elkInput {
     outline: none;
     border-radius: 0.5vh;
     border: 0.1vh solid rgb(132, 132, 132);
@@ -186,6 +195,7 @@ input::-webkit-outer-spin-button {
     transition: none;
     box-shadow: 0 0.2vh 0.2vh rgba(0, 0, 0, 0.5);
     font-size: 2vh;
+    margin: auto;
 }
 
 .tablaGen {
@@ -212,10 +222,9 @@ input::-webkit-outer-spin-button {
 }
 
 #linTabla {
-    width: fit-content;
+    width: 100%;
     background-color: rgb(239, 255, 211);
     margin: 0 auto 3vh;
-
 }
 
 .arnyek {
@@ -254,10 +263,12 @@ input::-webkit-outer-spin-button {
 .wrongAwnser {
     background-color: rgb(182, 60, 60);
 }
-.disabled{
+
+.disabled {
     display: none;
 }
-.elk{
+
+.elk {
     display: block;
     width: fit-content;
     background-color: rgba(197, 210, 111, 0.575);
@@ -266,16 +277,48 @@ input::-webkit-outer-spin-button {
     box-shadow: var(--boxShadow);
     border-radius: 2vh;
     transition: background-color 0.3s;
+    margin: 1vh;
 }
-.elkLabel{
+
+.elkLabel {
     background-color: rgb(226, 247, 122);
     margin: 1vh 0;
     padding: 0.1vh;
     box-shadow: var(--boxShadow);
     border-radius: 1vh;
 }
-#elkInput{
+
+#elkInput {
     height: 100%;
     color: black;
     transition: background-color 0.3s;
+}
+
+.mediaLineBreak {
+    display: none;
+}
+#ellenorzoGomb{
+    padding: 1vh;
+    outline: none;
+    background-color: #bb74eb;
+    border: 0.05vh solid black;
+    border-radius: 1vh;
+    transition: var(--hatterTrans);
+}
+#ellenorzoGomb:hover{
+    background-color: #cb8ff4;
+    transition: var(--hatterTrans);
+}
+@media screen and (max-width: 550px) {
+    .mediaLineBreak {
+        display: inline;
+    }
+    #linTablaSzulo {
+    background-color: rgba(80, 202, 40, 0.739);
+    margin: 2vh 0vh;}
+}
+@media screen and (max-width: 600px) {
+    #linTablaSzulo {
+    background-color: rgba(80, 202, 40, 0.739);
+    margin: 2vh 0vh;}
 }

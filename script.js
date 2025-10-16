@@ -69,7 +69,9 @@ function kezdoErtekLimit(elem, azon) {
         asideok[azon].classList.remove("enabled")
     }
 }
+let EditableContentCount = 0; //<-- éves leírási kulcsot számoljuk mint egy
 function tablaGeneralas() {
+    EditableContentCount = 1;
     let tablaSzulo = document.getElementById("linTablaSzulo")
     let ev = document.getElementById("linEvsz").value
     let maradvany = document.getElementById("linMaradvany").value
@@ -124,6 +126,7 @@ function tablaGeneralas() {
         <input type="text" name="elk" contenteditable id="elkInput">
         </section>`
         tablaSzulo.innerHTML += tartalom
+        tablaSzulo.innerHTML += `<button id="ellenorzoGomb" href="index.html" disabled onclick="tablaEllenorzes()">Tovább →</button>`
 
         document.querySelectorAll(".linEditableContent").forEach(cella =>
             cella.addEventListener("keydown", key => {
@@ -143,6 +146,9 @@ function tablaGeneralas() {
 
 
     };
+    EditableContentCount += ev * 3
+    if (maradvany > 0 && maradvany != "") EditableContentCount--;
+
 }
 function agyEsemenyHallgatot() {
     let elk = document.getElementById("elkInput")
@@ -218,16 +224,18 @@ function linTablaEllenorzes(cella, sor, oszlop, ev, maradvany, brutto) {
                     }
                 }
                 else {
-                    if (parseInt(cella.innerText) == brutto - (ecs * parseInt(sor))) {
+                    if (parseInt(cella.innerText) == brutto - (ecs * ev)) {
                         cella.classList.add("correctAwnser");
                         cella.classList.remove("wrongAwnser");
-                        cella.innerText = `${brutto - (ecs * parseInt(sor))} Ft`
+                        cella.innerText = `${brutto - (ecs * ev)} Ft`
                         cella.contentEditable = false
                     }
                     else {
                         cella.classList.add("wrongAwnser");
                         cella.classList.remove("correctAwnser");
                         cella.innerText = ""
+
+
                         setTimeout(() => {
                             cella.classList.remove("wrongAwnser");
                         }, 1000);
@@ -253,16 +261,20 @@ function linTablaEllenorzes(cella, sor, oszlop, ev, maradvany, brutto) {
             }, 1000);
         }
     }
+    let kitoltottAdatok = document.querySelectorAll("td.correctAwnser, input.correctAwnser")
+    if (EditableContentCount == kitoltottAdatok.length) {
+        document.getElementById("ellenorzoGomb").disabled = false
+    }
 }
 
 
 function elkEllenorzes() {
     let ev = document.getElementById("linEvsz").value
     let elk = document.getElementById("elkInput")
-    if (parseInt(elk.value) === 100 / ev) {
+    if (parseInt(elk.value) === parseInt(100 / ev)) {
         elk.classList.add("correctAwnser");
         elk.classList.remove("wrongAwnser");
-        elk.value = `${100 / ev} %`
+        elk.value = `${Math.round(100 / ev)} %`
         elk.disabled = true
         /*elk.readOnly = true*/
     }
@@ -274,4 +286,11 @@ function elkEllenorzes() {
             elk.classList.remove("wrongAwnser");
         }, 1000);
     }
+    let kitoltottAdatok = document.querySelectorAll("td.correctAwnser, input.correctAwnser")
+    if (EditableContentCount == kitoltottAdatok.length) {
+        document.getElementById("ellenorzoGomb").disabled = false
+    }
+}
+function tablaEllenorzes() {
+    alert("itt a vege gatya (=pants)")
 }
