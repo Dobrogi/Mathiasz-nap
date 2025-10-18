@@ -111,7 +111,7 @@ input[type=range] {
     text-align: center;
     font-size: 3vh;
     border-radius: 1vh;
-    width: fit-content;
+    width: 60%;
     margin: auto;
 
 
@@ -167,7 +167,6 @@ input::-webkit-outer-spin-button {
     border-radius: 0.6vh;
     box-shadow: 0 0.3vh 0.3vh rgba(0, 0, 0, 0.5);
     margin: 0.5vh 0;
-    margin: auto;
 
 }
 
@@ -195,7 +194,6 @@ input::-webkit-outer-spin-button {
     transition: none;
     box-shadow: 0 0.2vh 0.2vh rgba(0, 0, 0, 0.5);
     font-size: 2vh;
-    margin: auto;
 }
 
 .tablaGen {
@@ -276,14 +274,14 @@ input::-webkit-outer-spin-button {
     text-align: center;
     box-shadow: var(--boxShadow);
     border-radius: 2vh;
-    transition: background-color 0.3s;
+    transition: kbackground-color 0.3s;
     margin: 1vh;
 }
 
 .elkLabel {
     background-color: rgb(226, 247, 122);
     margin: 1vh 0;
-    padding: 0.1vh;
+    padding: 0.3vh;
     box-shadow: var(--boxShadow);
     border-radius: 1vh;
 }
@@ -297,28 +295,64 @@ input::-webkit-outer-spin-button {
 .mediaLineBreak {
     display: none;
 }
-#ellenorzoGomb{
+
+#ellenorzoGomb {
     padding: 1vh;
     outline: none;
     background-color: #bb74eb;
+    box-shadow: var(--boxShadow);
     border: 0.05vh solid black;
     border-radius: 1vh;
     transition: var(--hatterTrans);
 }
-#ellenorzoGomb:hover{
+
+#ellenorzoGomb:hover {
     background-color: #cb8ff4;
     transition: var(--hatterTrans);
 }
+
 @media screen and (max-width: 550px) {
-    .mediaLineBreak {
-        display: inline;
-    }
     #linTablaSzulo {
-    background-color: rgba(80, 202, 40, 0.739);
-    margin: 2vh 0vh;}
+        background-color: rgba(80, 202, 40, 0.739);
+        margin: 2vh 0vh;
+    }
 }
+
 @media screen and (max-width: 600px) {
     #linTablaSzulo {
-    background-color: rgba(80, 202, 40, 0.739);
-    margin: 2vh 0vh;}
+        background-color: rgba(80, 202, 40, 0.739);
+        margin: 2vh 0vh;
+    }
+
+    .formTarolo {
+        width: 100%;
+    }
+
+    .mediaVanish {
+        display: none;
+    }
+
+    #linTablaSzulo {
+        padding: 1vh 0;
+    }
+
+    #ellenorzoGomb {
+        display: block;
+        margin: auto;
+    }
+}
+
+@media screen and (min-width: 800px) {
+    #tablaGeneralas * {
+        font-size: 1.5vw;
+    }
+
+    #linTablaSzulo * {
+        font-size: 2vw;
+    }
+
+    #ellenorzoGomb {
+        display: block;
+        margin: auto;
+    }
 }

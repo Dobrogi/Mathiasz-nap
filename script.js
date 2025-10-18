@@ -126,7 +126,7 @@ function tablaGeneralas() {
         <input type="text" name="elk" contenteditable id="elkInput">
         </section>`
         tablaSzulo.innerHTML += tartalom
-        tablaSzulo.innerHTML += `<button id="ellenorzoGomb" href="index.html" disabled onclick="tablaEllenorzes()">Tovább →</button>`
+        tablaSzulo.innerHTML += `<button id="ellenorzoGomb" onclick="tablaEllenorzo()" disabled ">Tovább →</button>`
 
         document.querySelectorAll(".linEditableContent").forEach(cella =>
             cella.addEventListener("keydown", key => {
@@ -224,10 +224,10 @@ function linTablaEllenorzes(cella, sor, oszlop, ev, maradvany, brutto) {
                     }
                 }
                 else {
-                    if (parseInt(cella.innerText) == brutto - (ecs * ev)) {
+                    if (parseInt(cella.innerText) == brutto - (ecs * sor)) {
                         cella.classList.add("correctAwnser");
                         cella.classList.remove("wrongAwnser");
-                        cella.innerText = `${brutto - (ecs * ev)} Ft`
+                        cella.innerText = `${brutto - (ecs * sor)} Ft`
                         cella.contentEditable = false
                     }
                     else {
@@ -241,31 +241,14 @@ function linTablaEllenorzes(cella, sor, oszlop, ev, maradvany, brutto) {
                         }, 1000);
                     }
                 }
-
-
                 break;
         }
-    if (cella.classList.contains("linEvesLeirasiKulcs")) {
-        if (parseInt(cella.innerText) == parseInt(brutto / ev)) {
-            cella.classList.add("correctAwnser");
-            cella.classList.remove("wrongAwnser");
-            cella.innerText = `${parseInt(brutto / ev)} Ft`
-            cella.contentEditable = false
-        }
-        else {
-            cella.classList.add("wrongAwnser");
-            cella.classList.remove("correctAwnser");
-            cella.innerText = ""
-            setTimeout(() => {
-                cella.classList.remove("wrongAwnser");
-            }, 1000);
-        }
-    }
-    let kitoltottAdatok = document.querySelectorAll("td.correctAwnser, input.correctAwnser")
-    if (EditableContentCount == kitoltottAdatok.length) {
-        document.getElementById("ellenorzoGomb").disabled = false
-    }
 }
+let kitoltottAdatok = document.querySelectorAll("td.correctAwnser, input.correctAwnser")
+if (EditableContentCount == kitoltottAdatok.length) {
+    document.getElementById("ellenorzoGomb").disabled = false
+}
+
 
 
 function elkEllenorzes() {
@@ -291,6 +274,6 @@ function elkEllenorzes() {
         document.getElementById("ellenorzoGomb").disabled = false
     }
 }
-function tablaEllenorzes() {
-    alert("itt a vege gatya (=pants)")
+function tablaEllenorzo() {
+    window.location.href = '../index.html'
 }
