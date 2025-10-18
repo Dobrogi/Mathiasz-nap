@@ -149,6 +149,7 @@ article{
     border-radius: 10vh;
     background: linear-gradient(to right, rgba(30, 167, 99, 0.5), rgba(169, 231, 81, 0.5));
     transition: width 2s;
+    font-size: 4vh;
 }
 
 .eredmeny:hover{
@@ -170,7 +171,7 @@ h1{
     text-align: center;
     font-style: italic;
     font-weight: lighter;
-    font-size: 5vh;
+    font-size: 7vh;
 }
 
 .kerdes{
