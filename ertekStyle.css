@@ -113,8 +113,7 @@ input[type=range] {
     border-radius: 1vh;
     width: 60%;
     margin: auto;
-
-
+    word-wrap: break-word;
 }
 
 .OHogyIdeIsKellEgyConainerAFlexnek {
@@ -142,6 +141,8 @@ input::-webkit-outer-spin-button {
     background-color: rgb(57, 124, 219);
     border-radius: 1vh;
     padding: 0.5vh;
+
+
     box-shadow: 0 0.3vh 0.3vh rgba(0, 0, 0, 0.5);
 }
 
@@ -152,7 +153,6 @@ input::-webkit-outer-spin-button {
 
 .ertekAdo aside {
     display: flex;
-    font-size: 2vh;
     justify-content: space-between;
     padding: 0.6vh 4vh;
     margin: 1vh 0;
@@ -167,13 +167,29 @@ input::-webkit-outer-spin-button {
     border-radius: 0.6vh;
     box-shadow: 0 0.3vh 0.3vh rgba(0, 0, 0, 0.5);
     margin: 0.5vh 0;
+    display: block;
+    margin: auto;
 
 }
 
-.ertekAdo aside:not(.marad) {
+.ertekAdo aside {
     box-shadow: 0 0.3vh 0.3vh rgba(0, 0, 0, 0.5);
 }
+.marad{
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #1518c799;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
+}
+.marad input{
+    width: 100%;
+
+}
 
 .enabled {
     background-color: rgb(130, 220, 27);
@@ -316,6 +332,23 @@ input::-webkit-outer-spin-button {
         background-color: rgba(80, 202, 40, 0.739);
         margin: 2vh 0vh;
     }
+    aside.enabled label{
+        display: block;
+        margin: auto;
+        width: 100%;
+    }
+    .formTarolo {
+        width: 100%;
+    }
+
+    #tablaGeneralas {
+        margin: 0 1vh;
+    }
+    #linMaradvany{
+        display: block;
+        margin: auto;
+        position:sticky;
+    }
 }
 
 @media screen and (max-width: 600px) {
@@ -324,10 +357,15 @@ input::-webkit-outer-spin-button {
         margin: 2vh 0vh;
     }
 
-    .formTarolo {
+    .maradvany {
+        word-wrap: break-word;
         width: 100%;
+        padding: 0;
+        top: 0;
     }
-
+    .marad{
+        padding: 0;
+    }
     .mediaVanish {
         display: none;
     }
@@ -339,6 +377,11 @@ input::-webkit-outer-spin-button {
     #ellenorzoGomb {
         display: block;
         margin: auto;
+    }
+
+    #linBrutto,
+    #linMaradvany {
+        width: 100%;
     }
 }
 
