@@ -6,25 +6,21 @@ let kepkeres = document.getElementById("kepvetites")
 let mottokeres = document.getElementById("motto")*/
 
 const carouselKepek = document.querySelectorAll("#kepvetites img")
-const carouselMotto = document.querySelectorAll("#motto p")
 try {
     i = 0
     setInterval(() => {
         const elozo = i
         i = (i + 1) % carouselKepek.length
         carouselKepek[elozo].classList.remove("aktiv")
-        carouselMotto[elozo].classList.remove("aktiv")
 
         carouselKepek[elozo].classList.add("after")
-        carouselMotto[elozo].classList.add("after")
 
         carouselKepek[i].classList.add("aktiv")
-        carouselMotto[i].classList.add("aktiv")
+
         setTimeout(() => {
             carouselKepek[elozo].classList.remove("after")
-            carouselMotto[elozo].classList.remove("after")
         }, 1000);
-    }, 5000);
+    }, 7000);
 }
 catch (ex) {
     console.log("w")
