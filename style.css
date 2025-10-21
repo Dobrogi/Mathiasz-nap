@@ -65,6 +65,7 @@ nav button {
   margin: 1vh;
   width: 20%;
   border-radius: 2vh;
+  font-size: 1rem;
   cursor: pointer;
   word-wrap: break-word;
   user-select: none;

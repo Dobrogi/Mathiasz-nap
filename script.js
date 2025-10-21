@@ -126,7 +126,6 @@ function tablaGeneralas() {
         <input type="text" name="elk" contenteditable id="elkInput">
         </section>`
         tablaSzulo.innerHTML += tartalom
-        tablaSzulo.innerHTML += `<button id="ellenorzoGomb" onclick="tablaEllenorzo()" disabled ">Tovább →</button>`
 
         document.querySelectorAll(".linEditableContent").forEach(cella =>
             cella.addEventListener("keydown", key => {
@@ -243,12 +242,11 @@ function linTablaEllenorzes(cella, sor, oszlop, ev, maradvany, brutto) {
                 }
                 break;
         }
+    let kitoltottAdatok = document.querySelectorAll("td.correctAwnser, input.correctAwnser")
+    if (EditableContentCount == kitoltottAdatok.length) {
+        mivelMegNemSzamitACleanCodeIdeAztIrokAmitAkarok()
+    }
 }
-let kitoltottAdatok = document.querySelectorAll("td.correctAwnser, input.correctAwnser")
-if (EditableContentCount == kitoltottAdatok.length) {
-    document.getElementById("ellenorzoGomb").disabled = false
-}
-
 
 
 function elkEllenorzes() {
@@ -270,10 +268,13 @@ function elkEllenorzes() {
         }, 1000);
     }
     let kitoltottAdatok = document.querySelectorAll("td.correctAwnser, input.correctAwnser")
+    console.log(EditableContentCount, kitoltottAdatok.length);
     if (EditableContentCount == kitoltottAdatok.length) {
-        document.getElementById("ellenorzoGomb").disabled = false
+        mivelMegNemSzamitACleanCodeIdeAztIrokAmitAkarok()
     }
 }
-function tablaEllenorzo() {
-    window.location.href = '../index.html'
+function mivelMegNemSzamitACleanCodeIdeAztIrokAmitAkarok() {//waaa bugineki
+    setTimeout(() => {
+        alert("nincsen büdzsé jobb felugró ablakra")
+    }, 1500);
 }
