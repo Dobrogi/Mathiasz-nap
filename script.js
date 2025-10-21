@@ -76,7 +76,7 @@ function tablaGeneralas() {
     let ev = document.getElementById("linEvsz").value
     let maradvany = document.getElementById("linMaradvany").value
     let brutto = document.getElementById("linBrutto").value
-    let tartalom = '<table id="linTabla" class="arnyek">'
+    let tartalom = '<div id="actualTablaSzulo"><table id="linTabla" class="arnyek">'
 
     if (parseInt(brutto) <= 0 || brutto == "")
         alert("Számok nélkül nehéz számolni, tölts ki minden mezőt!")
@@ -119,7 +119,7 @@ function tablaGeneralas() {
             }
             tartalom += "</tr>"
         }
-        tartalom += '</table>'
+        tartalom += '</table> </div>'
         tablaSzulo.innerHTML = `
         <section class="elk" id="#elk"> 
         <label for="elkInput" class="elkLabel">Éves leírási kulcs (%)</label>
