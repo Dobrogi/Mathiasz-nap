@@ -27,7 +27,7 @@
         <h1 class="tablaTitle">Táblázat Létrehozása</h1>
         <hr>
         <section class="formKulso">
-            <section class="formTarolo ertekAdo"> <label for="evsz">Hány év a tervezett használati idő?</label><br>
+            <section class="formTarolo ertekAdo"> <label for="evsz" class="evInput">Hány év a tervezett használati idő?</label><br>
                 <div class="OHogyIdeIsKellEgyConainerAFlexnek"><input oninput="kiir()" type="range" name="linEvsz"
                         id="linEvsz" min="1" max="15" value="0"> <span id="kiiros">1 év</span>
                 </div>
@@ -43,6 +43,29 @@
                 <button class="tablaGen" type="button" onclick="tablaGeneralas()">Táblázat készítése</button>
             </section>
         </section>
+
+        <!DOCTYPE html>
+<html lang="hu">
+<head>
+<meta charset="UTF-8">
+<title>Zöld–Fekete Modern Popup</title>
+<link rel="stylesheet" href="styles.css"> <!-- opcionális külső CSS -->
+</head>
+<body>
+
+
+<!-- Popup overlay (háttér + doboz) -->
+<div class="popup-overlay" id="popupOverlay">
+    <div class="popup">
+        <h2>Megcsináltad!</h2>
+        <p class="bitam">But is there anymore?</p>
+        <button class="close-btn" id="closePopup">Bezárás</button>
+    </div>
+</div>
+
+<script src="script.js"></script> <!-- opcionális külső JS -->
+</body>
+</html>
 
 
     </form>

@@ -121,7 +121,7 @@ function tablaGeneralas() {
         }
         tartalom += '</table> </div>'
         tablaSzulo.innerHTML = `
-        <section class="elk" id="#elk"> 
+        <section class="elk" id="elk"> 
         <label for="elkInput" class="elkLabel">Éves leírási kulcs (%)</label>
         <input type="text" name="elk" contenteditable id="elkInput">
         </section>`
@@ -275,6 +275,29 @@ function elkEllenorzes() {
 }
 function mivelMegNemSzamitACleanCodeIdeAztIrokAmitAkarok() {//waaa bugineki
     setTimeout(() => {
-        alert("nincsen büdzsé jobb felugró ablakra")
+        showPopup()
     }, 1500);
 }
+
+function showPopup() {
+    const popupOverlay = document.getElementById('popupOverlay');
+    popupOverlay.style.display = 'flex';                // overlay láthatóvá tétele
+    setTimeout(() => popupOverlay.classList.add('active'), 10); // animáció trigger
+    document.body.style.overflow = 'hidden';            // háttér scroll tiltása
+}
+
+// Popup bezárása (funkcióba is teheted)
+function closePopup() {
+    const popupOverlay = document.getElementById('popupOverlay');
+    popupOverlay.classList.remove('active');           
+    setTimeout(() => popupOverlay.style.display = 'none', 300); 
+    document.body.style.overflow = 'auto';              // scroll visszaállítása
+}
+
+// Ha a “Bezárás” gombbal akarod bezárni
+document.getElementById('closePopup').addEventListener('click', closePopup);
+
+// Ha a háttérre kattintva akarod bezárni
+document.getElementById('popupOverlay').addEventListener('click', (e) => {
+    if (e.target === e.currentTarget) closePopup();
+});

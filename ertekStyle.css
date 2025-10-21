@@ -10,7 +10,7 @@ body {
     background-size: cover;
     background-attachment: fixed;
     background-repeat: no-repeat;
-    font-size: 2vh;
+    font-size: 1rem;
 }
 
 article {
@@ -18,7 +18,9 @@ article {
     padding: 1vh;
     display: block;
 }
-
+input{
+    font-size: 1.5rem;
+}
 h3 {
     font-size: 2.9vh;
     font-weight: normal;
@@ -109,7 +111,7 @@ input[type=range] {
     border: 0.2vh solid rgba(24, 129, 80, 0.7);
     padding: 2vh 0;
     text-align: center;
-    font-size: 1rem;
+    font-size: 1.5rem;
     border-radius: 1vh;
     width: 60%;
     margin: auto;
@@ -157,6 +159,7 @@ input::-webkit-outer-spin-button {
     justify-content: space-between;
     padding: 0.6vh 4vh;
     margin: 1vh 0;
+    font-size: 1.5rem;
     height: fit-content;
     flex-wrap: wrap;
     text-align: center;
@@ -170,7 +173,7 @@ input::-webkit-outer-spin-button {
     margin: 0.5vh 0;
     display: block;
     margin: auto;
-    font-size: 1rem;
+    font-size: 1.5rem;
 }
 
 .ertekAdo aside {
@@ -205,7 +208,7 @@ input::-webkit-outer-spin-button {
     width: 45%;
     transition: none;
     box-shadow: 0 0.2vh 0.2vh rgba(0, 0, 0, 0.5);
-    font-size: 1rem;
+    font-size: 1.5rem;
 }
 
 .tablaGen {
@@ -282,12 +285,11 @@ input::-webkit-outer-spin-button {
     display: block;
     width: fit-content;
     background-color: rgba(197, 210, 111, 0.575);
-    padding: 2vh;
+    padding: 2vh 0;
     text-align: center;
     box-shadow: var(--boxShadow);
     border-radius: 2vh;
-    transition: kbackground-color 0.3s;
-    margin: 1vh;
+    margin: 0.3vh;
 }
 
 .elkLabel {
@@ -300,6 +302,7 @@ input::-webkit-outer-spin-button {
 
 #elkInput {
     height: 100%;
+    width: 20%;
     color: black;
     transition: background-color 0.3s;
 }
@@ -390,9 +393,6 @@ input::-webkit-outer-spin-button {
     }
 }
 
-#tablaGeneralas * {
-    font-size: 1.5rem;
-}
 
 #actualTablaSzulo {
     overflow: scroll;
@@ -411,7 +411,7 @@ input::-webkit-outer-spin-button {
     }
 }
 #linTablaSzulo *{
-    font-size: 1.2rem;
+    font-size: 1.5rem;
 }
 #actualTablaSzulo {
     overflow: auto;
@@ -435,4 +435,66 @@ input::-webkit-outer-spin-button {
 
 #actualTablaSzulo::-webkit-scrollbar-thumb:hover {
     background-color: #2c7e15;
+}
+input{
+    margin: none;
+}
+.evInput{
+    font-size: 2rem;
+}
+.tabalTitle{
+    font-size: 1rem;
+}
+
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.7);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+
+.popup {
+    background: #247f08;
+    padding: 25px 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0,255,0,0.3);
+    max-width: 400px;
+    text-align: center;
+    transform: scale(0.8);
+    opacity: 0;
+    transition: all 0.3s ease;
+    border: 2px solid #00c853;
+    color: #fff;
+}
+
+
+.popup-overlay.active .popup {
+    transform: scale(1);
+    opacity: 1;
+}
+
+
+.popup .close-btn {
+    margin-top: 20px;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 6px;
+    background: #00c853;
+    color: #fff;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.popup .close-btn:hover {
+    background: #009624;
+}
+.bitam{
+    color: #247f08;
 }

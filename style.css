@@ -62,6 +62,8 @@ nav {
 nav button {
   background-color: #8cf05a;
   padding: 2vh;
+  color: black;
+  font-weight:1000;
   margin: 1vh;
   width: 20%;
   border-radius: 2vh;
